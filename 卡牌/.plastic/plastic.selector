@@ -1,4 +1,0 @@
-repository "卡牌@qmzhna@cloud.cn"
-  path "/"
-    br "/main"
-    co "/main"

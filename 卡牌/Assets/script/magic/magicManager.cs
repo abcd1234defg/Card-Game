@@ -88,6 +88,8 @@ public class magicManager : MonoBehaviour
             {
                 canClick = true;
             }
+            else
+                canClick = false;
         }
 
         if(gamemanager.state3 == gamemanager.gamestate3.magicEnd)
@@ -145,6 +147,7 @@ public class magicManager : MonoBehaviour
                 gamemanager.state3 = gamemanager.gamestate3.none;
                 canGoOn = false;
                 canOdd = false;
+                canClick = false;
             }
         }
         
@@ -164,6 +167,7 @@ public class magicManager : MonoBehaviour
                 gamemanager.state3 = gamemanager.gamestate3.none;
                 canGoOn = false;
                 canEven = false;
+                canClick = false;
             }
         }
     }

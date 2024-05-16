@@ -42,6 +42,8 @@ public class gamemanager : MonoBehaviour
         canDamage = true;
         state3 = gamestate3.none;
         magicManager = GetComponent<magicManager>();
+        bool canE = true;
+    
     }
 
     // Update is called once per frame
@@ -64,10 +66,13 @@ public class gamemanager : MonoBehaviour
         {
             pDamage();
             eDamage();
+            
+
+            
         }
         if(state == gamestate.end)
         {
-           
+            
           if(win > lose)
             {
                 state2 = gamestate2.win;
@@ -142,37 +147,36 @@ public class gamemanager : MonoBehaviour
     {
         if(state == gamestate.playing)
         {
-            int randomIndex = Random.Range(1, 7);
-            int randomIndex2 = Random.Range(1, 7);
-            int randomIndex3 = Random.Range(1, 7);
+            int randomIndex = Random.Range(1, odd.Length);
+            int randomIndex2 = Random.Range(1, odd.Length);
+            int randomIndex3 = Random.Range(1, odd.Length);
 
             if (canO)
             {
-                
                 number1 = odd[randomIndex];
                
                 number2 = odd[randomIndex2];
                 
                 number3 = odd[randomIndex3];
                 canO = false;
-               
+                print("odd");
             }
-            if (canE)
+            else if (canE)
             {
-                
                 number1 = even[randomIndex];
                 
                 number2 = even[randomIndex2];
                 
                 number3 = even[randomIndex3];
                 canE = false;
-
+                print("even");
             }
-            if(canE == false && canO == false)
+            else if(canE == false && canO == false)
             {
                 number1 = Random.Range(1, 13);
                 number2 = Random.Range(1, 13);
                 number3 = Random.Range(1, 13);
+                print("both");
             }
       
         }

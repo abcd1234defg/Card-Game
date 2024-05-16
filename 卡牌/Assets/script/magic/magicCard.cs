@@ -107,6 +107,7 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
                     gamemanager.state3 = gamemanager.gamestate3.none;
                     GetComponent<Image>().color = color;
                     thisButton.SetActive(false);
+                    magicManager.canClick = false;
                 }
             }
            

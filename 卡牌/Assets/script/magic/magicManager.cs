@@ -9,6 +9,7 @@ public class magicManager : MonoBehaviour
     public bool canSwap;//判断是否执行交换颜色
     public bool canTrans;//
     public bool canTransF, canTransW, canTransG;
+    public bool canOdd, canEven;
     public bool canGoOn;//用来从magicEnd变成none
     public bool canClick;//用来判断是否可以按下魔法卡上的confirm按钮
     public gamemanager gamemanager;

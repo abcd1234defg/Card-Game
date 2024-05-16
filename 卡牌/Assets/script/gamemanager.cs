@@ -22,6 +22,7 @@ public class gamemanager : MonoBehaviour
     public int magicNum;
     bool canDamage;
     public TextMesh e1, e2, e3;
+    magicManager magicManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,7 @@ public class gamemanager : MonoBehaviour
         enemylife = 10; playerlife = 10;
         canDamage = true;
         state3 = gamestate3.none;
+        magicManager = GetComponent<magicManager>();
     }
 
     // Update is called once per frame
@@ -135,6 +137,14 @@ public class gamemanager : MonoBehaviour
     {
         if(state == gamestate.playing)
         {
+            if(magicManager.canOdd)
+            {
+
+            }
+            if (magicManager.canEven)
+            {
+
+            }
             number1 = Random.Range(1, 13);
             number2 = Random.Range(1, 13);
             number3 = Random.Range(1, 13);

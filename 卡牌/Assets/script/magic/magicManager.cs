@@ -32,6 +32,14 @@ public class magicManager : MonoBehaviour
         {
             transColor();
         }
+        if(canOdd)
+        {
+            oddC();
+        }
+        if (canEven)
+        {
+            evenC();
+        }
     }
     public void Click()
     {
@@ -121,5 +129,42 @@ public class magicManager : MonoBehaviour
             canTransW = false;
         }
 
+    }
+
+    void oddC()
+    {
+        if(gamemanager.state3 == gamemanager.gamestate3.magicStart)
+        {
+            canClick = true;
+        }
+        if(gamemanager.state3 == gamemanager.gamestate3.magicEnd)
+        {
+            gamemanager.canO = true;
+            if(canGoOn == true)
+            {
+                gamemanager.state3 = gamemanager.gamestate3.none;
+                canGoOn = false;
+                canOdd = false;
+            }
+        }
+        
+    }
+
+    void evenC()
+    {
+        if (gamemanager.state3 == gamemanager.gamestate3.magicStart)
+        {
+            canClick = true;
+        }
+        if (gamemanager.state3 == gamemanager.gamestate3.magicEnd)
+        {
+            gamemanager.canE = true;
+            if (canGoOn == true)
+            {
+                gamemanager.state3 = gamemanager.gamestate3.none;
+                canGoOn = false;
+                canEven = false;
+            }
+        }
     }
 }

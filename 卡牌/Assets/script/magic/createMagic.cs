@@ -5,7 +5,7 @@ using UnityEngine;
 public class createMagic : MonoBehaviour
 {
     public gamemanager gamemanager;
-    public GameObject Swap, tF, tW, tG;
+    public GameObject Swap, tF, tW, tG, odd, even;
     bool canCreate;
     public int createNum, maxNum, existNum;
     int choice;
@@ -47,7 +47,7 @@ public class createMagic : MonoBehaviour
     {
         for (int i = 0; i < createNum; i++)
         {
-            choice = Random.Range(1, 5);
+            choice = Random.Range(1, 7);
             if(choice == 1)
             {
                 Instantiate(Swap, transform);
@@ -68,7 +68,16 @@ public class createMagic : MonoBehaviour
                 Instantiate(tG, transform);
                 existNum++;
             }
-            
+            if(choice == 5)
+            {
+                Instantiate(odd, transform);
+                existNum++;
+            }
+            if (choice == 6)
+            {
+                Instantiate(even, transform);
+                existNum++;
+            }
         }
     }
 }

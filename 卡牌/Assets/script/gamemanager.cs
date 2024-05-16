@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class gamemanager : MonoBehaviour
@@ -23,6 +24,9 @@ public class gamemanager : MonoBehaviour
     bool canDamage;
     public TextMesh e1, e2, e3;
     magicManager magicManager;
+    int[] odd = {1, 3, 5, 7, 9, 11};
+    int[] even = { 2, 4, 6, 8, 10, 12 };
+    public bool canO, canE;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +67,7 @@ public class gamemanager : MonoBehaviour
         }
         if(state == gamestate.end)
         {
+           
           if(win > lose)
             {
                 state2 = gamestate2.win;
@@ -137,17 +142,39 @@ public class gamemanager : MonoBehaviour
     {
         if(state == gamestate.playing)
         {
-            if(magicManager.canOdd)
+            int randomIndex = Random.Range(1, 7);
+            int randomIndex2 = Random.Range(1, 7);
+            int randomIndex3 = Random.Range(1, 7);
+
+            if (canO)
             {
+                
+                number1 = odd[randomIndex];
+               
+                number2 = odd[randomIndex2];
+                
+                number3 = odd[randomIndex3];
+                canO = false;
+               
+            }
+            if (canE)
+            {
+                
+                number1 = even[randomIndex];
+                
+                number2 = even[randomIndex2];
+                
+                number3 = even[randomIndex3];
+                canE = false;
 
             }
-            if (magicManager.canEven)
+            if(canE == false && canO == false)
             {
-
+                number1 = Random.Range(1, 13);
+                number2 = Random.Range(1, 13);
+                number3 = Random.Range(1, 13);
             }
-            number1 = Random.Range(1, 13);
-            number2 = Random.Range(1, 13);
-            number3 = Random.Range(1, 13);
+      
         }
         
     }

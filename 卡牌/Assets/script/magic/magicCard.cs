@@ -58,6 +58,14 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
                     magicManager.canTrans = true;
                     magicManager.canTransG = true;
                 }
+                if(gameObject.name == "odd(Clone)")
+                {
+                    magicManager.canOdd = true;
+                }
+                if (gameObject.name == "even(Clone)")
+                {
+                    magicManager.canEven = true;
+                }
             }
         }
         if (gamemanager.state3 == gamemanager.gamestate3.magicEnd)

@@ -142,6 +142,10 @@ public class magicManager : MonoBehaviour
         if(gamemanager.state3 == gamemanager.gamestate3.magicEnd)
         {
             gamemanager.canO = true;
+            if(gamemanager.canE == true)
+            {
+                gamemanager.canE = false;
+            }
             if(canGoOn == true)
             {
                 gamemanager.state3 = gamemanager.gamestate3.none;
@@ -150,7 +154,12 @@ public class magicManager : MonoBehaviour
                 canClick = false;
             }
         }
-        
+        if (gamemanager.state3 == gamemanager.gamestate3.none)
+        {
+            canOdd = false;
+          
+        }
+
     }
 
     void evenC()
@@ -162,6 +171,10 @@ public class magicManager : MonoBehaviour
         if (gamemanager.state3 == gamemanager.gamestate3.magicEnd)
         {
             gamemanager.canE = true;
+            if(gamemanager.canO == true)
+            {
+                gamemanager.canO = false;
+            }
             if (canGoOn == true)
             {
                 gamemanager.state3 = gamemanager.gamestate3.none;
@@ -169,6 +182,10 @@ public class magicManager : MonoBehaviour
                 canEven = false;
                 canClick = false;
             }
+        }
+        if (gamemanager.state3 == gamemanager.gamestate3.none)
+        {
+            canEven = false;
         }
     }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class createCard : MonoBehaviour
 {
-    public bool isEmpty, a;//ÓÃÀ´ÅĞ¶ÏÕâ¸öÎ»ÖÃÓĞÃ»ÓĞÊÖÅÆ£¬Õâ¸öaÃ²ËÆÃ»ÓĞÉ¶ÓÃ
+    public bool isEmpty, a;//ç”¨æ¥åˆ¤æ–­è¿™ä¸ªä½ç½®æœ‰æ²¡æœ‰æ‰‹ç‰Œï¼Œè¿™ä¸ªaè²Œä¼¼æ²¡æœ‰å•¥ç”¨
     public gamemanager gamemanager;
-    public int cardChoice;//ÓÃÓÚËæ»úÉú³ÉÈıÖÖÅÆ
-    public GameObject fireCard, waterCard, grassCard;//ÈıÖÖ¹¥»÷ÅÆ
+    public int cardChoice;//ç”¨äºéšæœºç”Ÿæˆä¸‰ç§ç‰Œ
+    public GameObject fireCard, waterCard, grassCard;//ä¸‰ç§æ”»å‡»ç‰Œ
     public GameObject mouse;
-    public bool remake;//ÆúÅÆ
+    public bool remake;//å¼ƒç‰Œ
     bool createC;
     int number;
     public int createNumber;
@@ -72,18 +72,12 @@ public class createCard : MonoBehaviour
                 }
                 if (cardChoice == 3)
                 {
-
                     Instantiate(grassCard, transform);
 
                     cardChoice = 0;
                     isEmpty = false;
-
-                }
-                
-            }
-           
-
+                }               
+            }        
         }
     }
-
 }

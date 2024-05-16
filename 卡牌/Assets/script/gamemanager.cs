@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class gamemanager : MonoBehaviour
 {
-    public enum gamestate { beforeStart, start, magicTime, playing, end}//·Ö±ğ¶ÔÓ¦ÆúÅÆ£¬³öÅÆ£¬¶Ô·½³öÅÆ£¬½áËãËÄ¸ö½×¶Î
-    public enum gamestate2 { win, lose, draw}//Ã¿¾ÖµÄÊ¤¸º
+    public enum gamestate { beforeStart, start, magicStart, magicEnd, playing, end}//åˆ†åˆ«å¯¹åº”å¼ƒç‰Œï¼Œå‡ºç‰Œï¼Œå¯¹æ–¹å‡ºç‰Œï¼Œç»“ç®—å››ä¸ªé˜¶æ®µ
+    public enum gamestate2 { win, lose, draw}//æ¯å±€çš„èƒœè´Ÿ
+    public enum gamestate3 { magicStart, magicEnd, none }
     public gamestate state;
     public gamestate2 state2;
-    public string choice;
+    public gamestate3 state3;
     public int number1, number2, number3;
-    public int fire, water, grass, enemyFire, enemyWater, enemyGrass;//¼ÇÂ¼Íæ¼ÒºÍµçÄÔÃ¿ÖÖÑÕÉ«¸÷³öÁË¶àÉÙÕÅ
+    public int fire, water, grass, enemyFire, enemyWater, enemyGrass;//è®°å½•ç©å®¶å’Œç”µè„‘æ¯ç§é¢œè‰²å„å‡ºäº†å¤šå°‘å¼ 
     public bool canStart;
     public GameObject player1, player2, player3, enemy1, enemy2, enemy3;
-    public int win, lose;//¸úµĞÈË¶Ô±ÈÊ±Ó®ºÍÊäµÄ´ÎÊı
+    public int win, lose;//è·Ÿæ•Œäººå¯¹æ¯”æ—¶èµ¢å’Œè¾“çš„æ¬¡æ•°
     public TextMesh text;
-    public int drawCard;//ÆúÅÆµÄÊıÁ¿
+    public int drawCard;//å¼ƒç‰Œçš„æ•°é‡
     public int enemylife = 10, playerlife = 10;
     public int playerDamage, enemyDamage;
     public int magicNum;
     bool canDamage;
+    public TextMesh e1, e2, e3;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,15 +35,18 @@ public class gamemanager : MonoBehaviour
         state = gamestate.beforeStart;
         enemylife = 10; playerlife = 10;
         canDamage = true;
-        
+        state3 = gamestate3.none;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(state == gamestate.start)
+        e1.text = number1.ToString();
+        e2.text = number2.ToString();
+        e3.text = number3.ToString();
+        if (state == gamestate.start)
         {
-            if(fire + water + grass == 3)//Íæ¼Ò°ÑÈıÕÅÅÆÑ¡Âú
+            if ((fire + water + grass == 3) && magicNum == 0)//ç©å®¶æŠŠä¸‰å¼ ç‰Œé€‰æ»¡
             {
                 canStart = true;
             }
@@ -126,7 +131,7 @@ public class gamemanager : MonoBehaviour
         }
         text.text = state.ToString();
     }
-    public void enemy()//÷»Èı¸öÊ®¶şÃæ÷»
+    public void enemy()//éª°ä¸‰ä¸ªåäºŒé¢éª°
     {
         if(state == gamestate.playing)
         {

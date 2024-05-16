@@ -13,8 +13,8 @@ public class fire : MonoBehaviour, IPointerClickHandler //, IPointerUpHandler, I
     public gamemanager gamemanager;
     public GameObject card;
     public GameObject player1, player2, player3;
-    public bool isChoose;//判断这张牌有没有被选中
-    public GameObject position;//这张牌的生成位置，用来确认是card1-6中的哪个
+    public bool isChoose;//鍒ゆ柇杩欏紶鐗屾湁娌℃湁琚�変腑
+    public GameObject position;//杩欏紶鐗岀殑鐢熸垚浣嶇疆锛岀敤鏉ョ‘璁ゆ槸card1-6涓殑鍝釜
     // Start is called before the first frame update
     private Color color;
     public TextMesh text;
@@ -121,9 +121,8 @@ public class fire : MonoBehaviour, IPointerClickHandler //, IPointerUpHandler, I
                     if (gamemanager.canStart == false)
                     {
                         gamemanager.fire++;
-
                     }
-                    gamemanager.choice = "fire";
+               
                 }
 
                 if (gameObject.tag == "water")
@@ -171,7 +170,7 @@ public class fire : MonoBehaviour, IPointerClickHandler //, IPointerUpHandler, I
      
     
     }
-    void playerChoice()//按一二三号位的顺序填入玩家选中的牌
+    void playerChoice()//鎸変竴浜屼笁鍙蜂綅鐨勯『搴忓～鍏ョ帺瀹堕�変腑鐨勭墝
     {
         if (player1.GetComponent<player>().theColor == null)
         {
@@ -196,7 +195,7 @@ public class fire : MonoBehaviour, IPointerClickHandler //, IPointerUpHandler, I
 
     }
 
-    void chehui()//再次点击撤回选中的牌
+    void chehui()//鍐嶆鐐瑰嚮鎾ゅ洖閫変腑鐨勭墝
     {
         card.GetComponent<SpriteRenderer>().color = Color.white;
         card.GetComponent<player>().theColor = null;

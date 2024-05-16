@@ -8,6 +8,7 @@ TagManager:
   - water
   - grass
   - mouse
+  - number
   layers:
   - Default
   - TransparentFX

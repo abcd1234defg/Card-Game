@@ -25,17 +25,13 @@ public class startButton : MonoBehaviour
 
             if(gamemanager.canStart == true)
             {
-                if(gamemanager.magicNum > 0)
-                {
-                    gamemanager.state = gamemanager.gamestate.magicTime;
-                }
-                else
-                {
                     gamemanager.state = gamemanager.gamestate.playing;
-                    gamemanager.enemy();
-                }
+                    gamemanager.enemy();               
             }
         }
+        /////////////////////////////////////////
+       
+        ///////////////////////////////////////////
         else if(gamemanager.state == gamemanager.gamestate.playing)
         {
             gamemanager.state = gamemanager.gamestate.end;

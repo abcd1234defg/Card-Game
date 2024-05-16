@@ -6,9 +6,10 @@ public class enemy : MonoBehaviour
 {
     public gamemanager gamemanager;
     public string color;
-    public int fire, water, grass;//Ä¿Ç°Ã»ÓÃ
+    public int fire, water, grass;//ç›®å‰æ²¡ç”¨
     public bool canGoOn;
-    public GameObject number;//Ê®¶ş¸öÊı×ÖÖĞÕâÕÅÅÆ¶ÔÓ¦µÄÊı×Ö
+    public GameObject Num;//åäºŒä¸ªæ•°å­—ä¸­è¿™å¼ ç‰Œå¯¹åº”çš„æ•°å­—
+    public number number;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,12 +41,13 @@ public class enemy : MonoBehaviour
             canGoOn = true;
         }
     }
-    void enemy1()//Ò»ºÅÎ»µÄÅÆ
+    void enemy1()//ä¸€å·ä½çš„ç‰Œ
     {
         if (canGoOn == true)
         {
-            number = GameObject.Find(gamemanager.number1.ToString());
-            if(number != null)
+            Num = GameObject.Find(gamemanager.number1.ToString());
+            number = Num.GetComponent<number>();
+            if(Num != null)
             {
                 chufa();
             }
@@ -53,12 +55,13 @@ public class enemy : MonoBehaviour
         }
         
     }
-    void enemy2()//¶şºÅÎ»µÄÅÆ
+    void enemy2()//äºŒå·ä½çš„ç‰Œ
     {
         if (canGoOn == true)
         {
-            number = GameObject.Find(gamemanager.number2.ToString());
-            if (number != null)
+            Num = GameObject.Find(gamemanager.number2.ToString());
+            number = Num.GetComponent<number>();
+            if (Num != null)
             {
                 chufa();
             }
@@ -66,12 +69,13 @@ public class enemy : MonoBehaviour
         }
 
     }
-    void enemy3()//ÈıºÅÎ»µÄÅÆ
+    void enemy3()//ä¸‰å·ä½çš„ç‰Œ
     {
         if (canGoOn == true)
         {
-            number = GameObject.Find(gamemanager.number3.ToString());
-            if (number != null)
+            Num = GameObject.Find(gamemanager.number3.ToString());
+            number = Num.GetComponent<number>();
+            if (Num != null)
             {
                 chufa();
             }
@@ -81,7 +85,7 @@ public class enemy : MonoBehaviour
     }
     void chufa()
     {
-        if (number.GetComponent<number>().color == "water")
+        if (number.theColor == number.blockColor.water)
         {
             this.GetComponent<SpriteRenderer>().color = Color.blue;
             color = "water";
@@ -89,7 +93,7 @@ public class enemy : MonoBehaviour
             canGoOn = false;
 
         }
-        if (number.GetComponent<number>().color == "fire")
+        if (number.theColor == number.blockColor.fire)
         {
             this.GetComponent<SpriteRenderer>().color = Color.red;
             color = "fire";
@@ -97,7 +101,7 @@ public class enemy : MonoBehaviour
             canGoOn = false;
 
         }
-        if (number.GetComponent<number>().color == "grass")
+        if (number.theColor == number.blockColor.grass)
         {
             this.GetComponent<SpriteRenderer>().color = Color.green;
             color = "grass";

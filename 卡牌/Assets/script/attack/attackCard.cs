@@ -5,19 +5,20 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class attackCard : MonoBehaviour, IPointerClickHandler
+public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject manager;
     public gamemanager gamemanager;
     public GameObject card;
     public GameObject player1, player2, player3;
-    public bool isChoose, isDraw;//判断这张牌有没有被选中
+    public bool isChoose, isDraw;//鍒ゆ柇杩欏紶鐗屾湁娌℃湁琚�変腑
     bool choose;
-    public GameObject position;//这张牌的生成位置，用来确认是card1-6中的哪个
+    public GameObject position;//杩欏紶鐗岀殑鐢熸垚浣嶇疆锛岀敤鏉ョ‘璁ゆ槸card1-6涓殑鍝釜
     // Start is called before the first frame update
     private Color color;
     public TextMeshProUGUI text;
     createCard createCard;
+    SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,8 @@ public class attackCard : MonoBehaviour, IPointerClickHandler
         createCard = position.GetComponent<createCard>();
         color = GetComponent<Image>().color;
         text.text = null;
+        
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -53,7 +56,7 @@ public class attackCard : MonoBehaviour, IPointerClickHandler
 
         }
     }
-    void playerChoice()//按一二三号位的顺序填入玩家选中的牌
+    void playerChoice()//鎸変竴浜屼笁鍙蜂綅鐨勯『搴忓～鍏ョ帺瀹堕�変腑鐨勭墝
     {
         if (player1.GetComponent<player>().theColor == null)
         {
@@ -84,16 +87,19 @@ public class attackCard : MonoBehaviour, IPointerClickHandler
 
     }
 
-    void chehui()//再次点击撤回选中的牌
+    void chehui()//鍐嶆鐐瑰嚮鎾ゅ洖閫変腑鐨勭墝
     {
-        card.GetComponent<SpriteRenderer>().color = Color.white;
-        card.GetComponent<player>().theColor = null;
-        card = null;
-        text.text = null;
+        if(card != null)
+        {
+            card.GetComponent<SpriteRenderer>().color = Color.white;
+            card.GetComponent<player>().theColor = null;
+            card = null;
+            text.text = null;
+        }
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (gamemanager.state == gamemanager.gamestate.beforeStart)
+        if (gamemanager.state == gamemanager.gamestate.beforeStart)//寮冪墝闃舵
         {
             if (choose == false)
             {
@@ -122,43 +128,39 @@ public class attackCard : MonoBehaviour, IPointerClickHandler
             }
         }
 
-        if (gamemanager.state == gamemanager.gamestate.start)
+        if (gamemanager.state == gamemanager.gamestate.start)//鍑虹墝闃舵
         {
-            if (isChoose == false)
+            if (isChoose == false)//鍑虹墝
             {
-                createCard.createNumber++;
-                playerChoice();
-                if (this.gameObject.tag == "fire")
+                if(gamemanager.canStart == false)
                 {
-                    if (gamemanager.canStart == false)
+                    createCard.createNumber++;
+                    playerChoice();
+                    if (this.gameObject.tag == "fire")
                     {
-                        gamemanager.fire++;
-
+                       
+                            gamemanager.fire++;
                     }
-                    gamemanager.choice = "fire";
-                }
 
-                if (gameObject.tag == "water")
-                {
-                    if (gamemanager.canStart == false)
+                    if (gameObject.tag == "water")
                     {
-                        gamemanager.water++;
+                        
+                            gamemanager.water++;
 
+                        
                     }
-                }
 
-                if (gameObject.tag == "grass")
-                {
-                    if (gamemanager.canStart == false)
+                    if (gameObject.tag == "grass")
                     {
-                        gamemanager.grass++;
+                       
+                            gamemanager.grass++;
 
+                        
                     }
+                    isChoose = true;
                 }
-                isChoose = true;
-            
             }
-            else if (isChoose == true)
+            else if (isChoose == true)//鍐嶆鐐瑰嚮璇ョ墝鍙栨秷鍑虹墝
             {
                 createCard.createNumber--;
                 if (this.gameObject.tag == "fire")
@@ -177,9 +179,20 @@ public class attackCard : MonoBehaviour, IPointerClickHandler
                 }
                 chehui();
                 isChoose = false;
-    
             }
         }
 
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        transform.localScale = new Vector3(1, 1);
+        spriteRenderer.sortingOrder = 0;
+
+
+    }
+    public void OnPointerEnter(PointerEventData pointerEventData)
+    {
+        transform.localScale = new Vector3(1.5f, 1.5f);
+        spriteRenderer.sortingOrder = 1;
     }
 }

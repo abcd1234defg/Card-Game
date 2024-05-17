@@ -6,10 +6,10 @@ public class Witcher : MonoBehaviour
 {
     public string Single;//监测这张单卡的效果
     public int ATK;//攻击力
-    int rare;//稀有度
+    public int rare;//稀有度
     void Start()
     {
-        rare = Random.Range(0, 10);
+        rare = Random.Range(1, 11);
         if (rare <= 5) { Single = "Slash"; }//当出生点数是5以下时，生成“斩击”
         if (rare > 5 && rare < 7) { Single = "Shield"; }//当出生点数是6和7时，生成“护盾术”
         if (rare > 7 && rare < 10) { Single = "WitchBolt"; }//当出生点数是8和9时，生成“巫术箭”

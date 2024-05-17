@@ -6,11 +6,11 @@ public class player : MonoBehaviour
 {
     public enum haveColor { fire, water, grass, none }
     public haveColor color;
-    public string theColor;//ÓÃÓÚ¼ÇÂ¼Õâ¸öÎ»ÖÃµÄÅÆµÄÑÕÉ«
+    public string theColor;//ç”¨äºè®°å½•è¿™ä¸ªä½ç½®çš„ç‰Œçš„é¢œè‰²
     public gamemanager gamemanager;
     public GameObject manager;
     public bool canGoOn;
-    public GameObject enemy;//¶ÔÓ¦Î»ÖÃµÄµĞÈË
+    public GameObject enemy;//å¯¹åº”ä½ç½®çš„æ•Œäºº
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,7 @@ public class player : MonoBehaviour
         }
         if (this.gameObject.name == ("player2"))
         {
-            theColor = "1";//Õâ¸ö1ÊÇÕ¼Î»ÓÃµÄ
+            theColor = "1";//è¿™ä¸ª1æ˜¯å ä½ç”¨çš„
         }
         if (this.gameObject.name == ("player3"))
         {

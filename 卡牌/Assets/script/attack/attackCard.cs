@@ -39,7 +39,7 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     // Update is called once per frame
     void Update()
     {
-        if (gamemanager.state == gamemanager.gamestate.start)
+        if (gamemanager.state == gamemanager.gamestate.start)//回合弃牌阶段，把选中的手卡丢弃
         {
             if (isDraw == true)
             {
@@ -47,7 +47,7 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
                 Destroy(gameObject);
             }
         }
-        if (gamemanager.state == gamemanager.gamestate.playing)
+        if (gamemanager.state == gamemanager.gamestate.playing)//回合出牌阶段的出牌将选中的牌删除
         {
             if (isChoose == true)
             {

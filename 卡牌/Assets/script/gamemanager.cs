@@ -7,7 +7,7 @@ public class gamemanager : MonoBehaviour
 {
     public enum gamestate { beforeStart, start, magicStart, magicEnd, playing, end}//分别对应弃牌，出牌，对方出牌，结算四个阶段
     public enum gamestate2 { win, lose, draw}//每局的胜负
-    public enum gamestate3 { magicStart, magicEnd, none }
+    public enum gamestate3 { magicStart, magicEnd, none }//魔法卡的阶段
     public gamestate state;
     public gamestate2 state2;
     public gamestate3 state3;
@@ -18,8 +18,8 @@ public class gamemanager : MonoBehaviour
     public int win, lose;//跟敌人对比时赢和输的次数
     public TextMesh text;
     public int drawCard;//弃牌的数量
-    public int enemylife = 10, playerlife = 10;
-    public int playerDamage, enemyDamage;
+    public int enemylife = 10, playerlife = 10;//玩家和敌人的血量
+    public int playerDamage, enemyDamage;//玩家和敌人会造成的伤害
     public int magicNum;
     bool canDamage;
     public TextMesh e1, e2, e3;

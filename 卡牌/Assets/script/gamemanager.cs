@@ -184,22 +184,38 @@ public class gamemanager : MonoBehaviour
     }
     public void pDamage()
     {
-        if(fire == 2 || water == 2 || grass == 2)
+        if (fire == 2)
+        {
+            playerDamage = player1.GetComponent<player>().ATK + player2.GetComponent<player>().ATK + player3.GetComponent<player>().ATK + 1;
+        }
+        if (fire == 3)
+        {
+            playerDamage = player1.GetComponent<player>().ATK + player2.GetComponent<player>().ATK + player3.GetComponent<player>().ATK + 3;
+        }
+        if (water == 2 || grass == 2)
         {
             playerDamage = 2;
         }
-        if(fire == 3 || water == 3 || grass == 3)
+        if(water == 3 || grass == 3)
         {
             playerDamage = 3;
         }
     }
     public void eDamage()
     {
-        if(enemyFire == 2 || enemyWater == 2 || enemyGrass == 2)
+        if (enemyFire == 2)
+        {
+            enemyDamage = enemy1.GetComponent<enemy>().ATK+ enemy2.GetComponent<enemy>().ATK+ enemy3.GetComponent<enemy>().ATK + 1;
+        }
+        if (enemyFire == 3)
+        {
+            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK + 3;
+        }
+        if (enemyWater == 2 || enemyGrass == 2)
         {
             enemyDamage = 2;
         }
-        if(enemyFire == 3 || enemyWater == 3 || grass == 3)
+        if(enemyWater == 3 || grass == 3)
         {
             enemyDamage = 3;
         }

@@ -10,10 +10,12 @@ public class enemy : MonoBehaviour
     public bool canGoOn;
     public GameObject Num;//十二个数字中这张牌对应的数字
     public number number;
+    public int ATK;
     // Start is called before the first frame update
     void Start()
     {
         canGoOn = true;
+        ATK = 1;
     }
 
     // Update is called once per frame

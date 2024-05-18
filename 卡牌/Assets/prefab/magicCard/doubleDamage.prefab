@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3107022911614386254}
   - component: {fileID: -6146183906888323231}
   - component: {fileID: 431102683814418288}
-  - component: {fileID: -6648407371628404246}
+  - component: {fileID: 8121079457760467234}
   m_Layer: 5
-  m_Name: swapPosition
+  m_Name: doubleDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a1b31a92ca24582499783ae2d5c93a7f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5451fb5134ace2947b85279f917ecf17, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -149,7 +149,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &-6648407371628404246
+--- !u!210 &8121079457760467234
 SortingGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

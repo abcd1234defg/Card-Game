@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
 
 public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -17,6 +18,7 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     private Color color;
     public GameObject thisButton;
     GameObject creater;
+    bool draw;//true表示这张牌会被弃掉
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,12 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
         print("a=" + a);
         if(gamemanager.state == gamemanager.gamestate.start)
         {
+            if(draw)
+            {
+                isChoose = false;
+                GetComponent<Image>().color = color;
+                Destroy(gameObject);
+            }
             if (isChoose == true)
             {
                 if(gameObject.name == "swapPosition(Clone)")
@@ -85,7 +93,26 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
   
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(gamemanager.state == gamemanager.gamestate.start)
+        if(gamemanager.state == gamemanager.gamestate.beforeStart)//弃牌阶段弃牌
+        {
+            if(isChoose == false)
+            {
+                isChoose = true;
+                creater.GetComponent<createMagic>().draw = true;
+                creater.GetComponent<createMagic>().existNum--;
+                GetComponent<Image>().color = new Vector4(1, 1, 1, 0.6f);
+                draw = true;
+            }
+            else if(isChoose == true)
+            {
+                isChoose = false;
+                creater.GetComponent<createMagic>().draw = false;
+                creater.GetComponent<createMagic>().existNum++;
+                GetComponent<Image>().color = new Vector4(1, 1, 1, 1f);
+                draw = false;
+            }
+        }
+        if(gamemanager.state == gamemanager.gamestate.start)//出牌阶段出牌
         {
             if(gamemanager.state3 == gamemanager.gamestate3.none)
             {
@@ -120,7 +147,7 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
          transform.localScale = new Vector3(1, 1);
         spriteRenderer.sortingOrder = 0;
         Debug.Log("under");
-
+        GetComponent<SortingGroup>().sortingOrder = 0;
 
     }
     public void OnPointerEnter(PointerEventData pointerEventData)
@@ -128,7 +155,7 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
          transform.localScale = new Vector3(1.5f, 1.5f);
         spriteRenderer.sortingOrder = 1;
         Debug.Log("above");
-        
+        GetComponent<SortingGroup>().sortingOrder = 1;
 
     }
     public void clickB()

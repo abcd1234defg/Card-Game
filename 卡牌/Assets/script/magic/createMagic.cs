@@ -9,6 +9,7 @@ public class createMagic : MonoBehaviour
     bool canCreate;
     public int createNum, maxNum, existNum;
     int choice;
+    public bool draw;
    
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,14 @@ public class createMagic : MonoBehaviour
             {
                 create();
                 canCreate = false;
+            }
+        }
+        if(gamemanager.state == gamemanager.gamestate.start)
+        {
+            if(draw == true)
+            {
+                create();
+                draw = false;
             }
         }
         if(gamemanager.state == gamemanager.gamestate.end)

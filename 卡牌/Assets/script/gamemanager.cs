@@ -66,9 +66,7 @@ public class gamemanager : MonoBehaviour
         {
             pDamage();
             eDamage();
-            
-
-            
+     
         }
         if(state == gamestate.end)
         {
@@ -192,13 +190,21 @@ public class gamemanager : MonoBehaviour
         {
             playerDamage = player1.GetComponent<player>().ATK + player2.GetComponent<player>().ATK + player3.GetComponent<player>().ATK + 3;
         }
-        if (water == 2 || grass == 2)
+        if (water == 2)
         {
-            playerDamage = 2;
+            playerDamage = player1.GetComponent<player>().ATK + player2.GetComponent<player>().ATK + player3.GetComponent<player>().ATK;
         }
-        if(water == 3 || grass == 3)
+        if (water == 3)
         {
-            playerDamage = 3;
+            playerDamage = player1.GetComponent<player>().ATK + player2.GetComponent<player>().ATK + player3.GetComponent<player>().ATK;
+        }
+        if (grass ==2)
+        {
+            playerDamage = player1.GetComponent<player>().ATK + player2.GetComponent<player>().ATK + player3.GetComponent<player>().ATK;
+        }
+        if (grass == 3)
+        {
+            playerDamage = player1.GetComponent<player>().ATK + player2.GetComponent<player>().ATK + player3.GetComponent<player>().ATK;
         }
     }
     public void eDamage()
@@ -211,13 +217,21 @@ public class gamemanager : MonoBehaviour
         {
             enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK + 3;
         }
-        if (enemyWater == 2 || enemyGrass == 2)
+        if (enemyWater == 2)
         {
-            enemyDamage = 2;
+            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
         }
-        if(enemyWater == 3 || grass == 3)
+        if (enemyWater == 3)
         {
-            enemyDamage = 3;
+            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
+        }
+        if (enemyGrass == 2)
+        {
+            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
+        }
+        if (enemyGrass == 3)
+        {
+            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
         }
     }
 }

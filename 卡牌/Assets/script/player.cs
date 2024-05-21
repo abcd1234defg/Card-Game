@@ -12,6 +12,7 @@ public class player : MonoBehaviour
     public bool canGoOn;
     public GameObject enemy;//对应位置的敌人
     public int ATK;
+    public string single;
     // Start is called before the first frame update
     void Start()
     {

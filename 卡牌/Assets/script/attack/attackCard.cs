@@ -19,6 +19,7 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     public TextMeshProUGUI text;
     createCard createCard;
     SpriteRenderer spriteRenderer;
+    
     // Start is called before the first frame update
     void Start()
     {

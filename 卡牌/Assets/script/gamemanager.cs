@@ -27,6 +27,8 @@ public class gamemanager : MonoBehaviour
     int[] odd = {1, 3, 5, 7, 9, 11};
     int[] even = { 2, 4, 6, 8, 10, 12 };
     public bool canO, canE;
+    public int beiLv;//双方的伤害的倍率
+    public int f,w,g;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,10 @@ public class gamemanager : MonoBehaviour
         e1.text = number1.ToString();
         e2.text = number2.ToString();
         e3.text = number3.ToString();
+        if(state == gamestate.beforeStart)
+        {
+            beiLv = 1;
+        }
         if (state == gamestate.start)
         {
             if ((fire + water + grass == 3) && magicNum == 0)//玩家把三张牌选满
@@ -62,17 +68,17 @@ public class gamemanager : MonoBehaviour
                 canStart = false;
             canDamage = true;
         }
+        if(state3 == gamestate3.magicEnd)
+        {
+            f = w = g = 0;
+        }
         if(state == gamestate.playing)
         {
             pDamage();
-            eDamage();
-            
-
-            
+            eDamage();  
         }
         if(state == gamestate.end)
         {
-            
           if(win > lose)
             {
                 state2 = gamestate2.win;
@@ -105,13 +111,13 @@ public class gamemanager : MonoBehaviour
             {
                 if (state2 == gamestate2.win)
                 {
-                    enemylife -= playerDamage;
+                    enemylife -= (playerDamage * beiLv);
                     canDamage = false;
                     print("asdad");
                 }
                 if (state2 == gamestate2.lose)
                 {
-                    playerlife -= enemyDamage;
+                    playerlife -= (enemyDamage * beiLv);
                     canDamage = false;
                 }
                 if (state2 == gamestate2.draw)

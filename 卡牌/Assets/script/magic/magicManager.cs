@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class magicManager : MonoBehaviour
 {
@@ -12,9 +13,10 @@ public class magicManager : MonoBehaviour
     public bool canOdd, canEven;
     public bool canGoOn;//用来从magicEnd变成none
     public bool canClick;//用来判断是否可以按下魔法卡上的confirm按钮
+    public bool canDouble;
     public gamemanager gamemanager;
     public GameObject thisCard;
-    
+    public number number1;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,10 @@ public class magicManager : MonoBehaviour
         if (canEven)
         {
             evenC();
+        }
+        if(canDouble)
+        {
+            doubleD();
         }
     }
     public void Click()
@@ -80,13 +86,43 @@ public class magicManager : MonoBehaviour
             canClick = false;
         }
     }
-    void transColor()
+    void transColor()//切换单一颜色
     {
         if(gamemanager.state3 == gamemanager.gamestate3.magicStart)
         {
             if(num1 != null)
             {
-                canClick = true;
+                
+                number1 = num1.GetComponent<number>();
+                if (canTransF)
+                {
+                    if ((number1.theColor == number.blockColor.grass && gamemanager.g > 1) || (number1.theColor == number.blockColor.water && gamemanager.w > 1))
+                    {
+                        canClick = true;
+                    }
+                    else
+                        canClick = false;
+                }
+                if (canTransW)
+                {
+                    if ((number1.theColor == number.blockColor.fire && gamemanager.f > 1) || (number1.theColor == number.blockColor.grass && gamemanager.g > 1))
+                    {
+                        canClick = true;
+                    }
+                    else
+                        canClick = false;
+                    
+                }
+                if (canTransG)
+                {
+                    if ((number1.theColor == number.blockColor.fire && gamemanager.f > 1) || (number1.theColor == number.blockColor.water && gamemanager.w > 1))
+                    {
+                        canClick = true;
+                    }
+                    else
+                        canClick = false;
+                }
+                
             }
             else
                 canClick = false;
@@ -187,5 +223,25 @@ public class magicManager : MonoBehaviour
         {
             canEven = false;
         }
+        
+    }
+    void doubleD()
+    {
+        if(gamemanager.state3 == gamemanager.gamestate3.magicStart)
+        {
+            canClick = true;
+        }
+        if(gamemanager.state3 == gamemanager.gamestate3.magicEnd)
+        {
+            gamemanager.beiLv = 2;
+            if (canGoOn == true)
+            {
+                gamemanager.state3 = gamemanager.gamestate3.none;
+                canGoOn = false;
+                canDouble = false;
+                canClick = false;
+            }
+        }
+
     }
 }

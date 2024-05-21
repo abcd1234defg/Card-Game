@@ -2494,6 +2494,7 @@ MonoBehaviour:
   e3: {fileID: 1612403688}
   canO: 0
   canE: 0
+  beiLv: 0
 --- !u!4 &894722935
 Transform:
   m_ObjectHideFlags: 0
@@ -2532,6 +2533,7 @@ MonoBehaviour:
   canEven: 0
   canGoOn: 0
   canClick: 0
+  canDouble: 0
   gamemanager: {fileID: 894722934}
   thisCard: {fileID: 0}
 --- !u!1 &912018374
@@ -2996,6 +2998,7 @@ MonoBehaviour:
   tG: {fileID: 684508182936846462, guid: 6f532b6965225fc42826b04689f58735, type: 3}
   odd: {fileID: 684508182936846462, guid: 11b49fe14e6cbab45bc03d5eb96d0932, type: 3}
   even: {fileID: 684508182936846462, guid: b1137e6ccf9553840a557ce0d18d1a3c, type: 3}
+  doubleD: {fileID: 684508182936846462, guid: 1e4afb5d497f78344b7917bd45ea18f7, type: 3}
   createNum: 0
   maxNum: 0
   existNum: 0
@@ -3337,8 +3340,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 689, y: 215.48}
-  m_SizeDelta: {x: 1085.8179, y: 288.5604}
+  m_AnchoredPosition: {x: 682.83, y: 201}
+  m_SizeDelta: {x: 1307.3013, y: 318.4307}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1405730590
 MonoBehaviour:
@@ -3382,7 +3385,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 150, y: 200}
+  m_CellSize: {x: 180, y: 240}
   m_Spacing: {x: 25, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2

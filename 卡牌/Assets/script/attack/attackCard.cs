@@ -191,7 +191,7 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     }
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        transform.localScale = new Vector3(1.5f, 1.5f);
+        transform.localScale = new Vector3(1.3f, 1.3f);
         GetComponent<SortingGroup>().sortingOrder = 1;
     }
 }

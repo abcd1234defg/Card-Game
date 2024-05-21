@@ -74,6 +74,10 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
                 {
                     magicManager.canEven = true;
                 }
+                if(gameObject.name == "doubleDamage(Clone)")
+                {
+                    magicManager.canDouble = true;
+                }
             }
         }
         if (gamemanager.state3 == gamemanager.gamestate3.magicEnd)
@@ -100,6 +104,7 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
                 isChoose = true;
                 creater.GetComponent<createMagic>().draw = true;
                 creater.GetComponent<createMagic>().existNum--;
+                creater.GetComponent<createMagic>().drawNum++;
                 GetComponent<Image>().color = new Vector4(1, 1, 1, 0.6f);
                 draw = true;
             }
@@ -108,6 +113,7 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
                 isChoose = false;
                 creater.GetComponent<createMagic>().draw = false;
                 creater.GetComponent<createMagic>().existNum++;
+                creater.GetComponent<createMagic>().drawNum--;
                 GetComponent<Image>().color = new Vector4(1, 1, 1, 1f);
                 draw = false;
             }
@@ -152,7 +158,7 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     }
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-         transform.localScale = new Vector3(1.5f, 1.5f);
+         transform.localScale = new Vector3(1.3f, 1.3f);
         spriteRenderer.sortingOrder = 1;
         Debug.Log("above");
         GetComponent<SortingGroup>().sortingOrder = 1;

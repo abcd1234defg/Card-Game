@@ -2442,6 +2442,7 @@ GameObject:
   - component: {fileID: 894722935}
   - component: {fileID: 894722934}
   - component: {fileID: 894722936}
+  - component: {fileID: 894722937}
   m_Layer: 0
   m_Name: gamemanager
   m_TagString: Untagged
@@ -2495,6 +2496,9 @@ MonoBehaviour:
   canO: 0
   canE: 0
   beiLv: 0
+  f: 0
+  w: 0
+  g: 0
 --- !u!4 &894722935
 Transform:
   m_ObjectHideFlags: 0
@@ -2536,6 +2540,30 @@ MonoBehaviour:
   canDouble: 0
   gamemanager: {fileID: 894722934}
   thisCard: {fileID: 0}
+  number1: {fileID: 0}
+--- !u!114 &894722937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894722933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a52863d1e4cb987459ab3f7a3ca142dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamemanager: {fileID: 894722934}
+  canRun: 0
+  shield: 0
+  heal: 0
+  burn: 0
+  p1: {fileID: 0}
+  p2: {fileID: 0}
+  p3: {fileID: 0}
+  e1: {fileID: 0}
+  e2: {fileID: 0}
+  e3: {fileID: 0}
 --- !u!1 &912018374
 GameObject:
   m_ObjectHideFlags: 0
@@ -3002,6 +3030,7 @@ MonoBehaviour:
   createNum: 0
   maxNum: 0
   existNum: 0
+  drawNum: 0
   draw: 0
 --- !u!1 &1267970440
 GameObject:
@@ -4153,6 +4182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gamemanager: {fileID: 894722934}
   creater: {fileID: 1405730588}
+  manager: {fileID: 894722933}
 --- !u!61 &1716599559
 BoxCollider2D:
   m_ObjectHideFlags: 0

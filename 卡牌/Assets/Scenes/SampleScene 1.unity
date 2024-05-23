@@ -1039,6 +1039,7 @@ GameObject:
   - component: {fileID: 502530251}
   - component: {fileID: 502530250}
   - component: {fileID: 502530249}
+  - component: {fileID: 502530252}
   m_Layer: 0
   m_Name: player1
   m_TagString: Untagged
@@ -1065,6 +1066,7 @@ MonoBehaviour:
   canGoOn: 0
   enemy: {fileID: 0}
   ATK: 0
+  single: 
 --- !u!212 &502530250
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1132,6 +1134,22 @@ Transform:
   m_Father: {fileID: 780327962}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &502530252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502530248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9914ee784ce444da3f371a63d45cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GM: {fileID: 0}
+  thisSlot: {fileID: 0}
+  enemySlot: {fileID: 0}
+  otherEnemySlots: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3356,6 +3374,7 @@ GameObject:
   - component: {fileID: 1417532726}
   - component: {fileID: 1417532725}
   - component: {fileID: 1417532724}
+  - component: {fileID: 1417532727}
   m_Layer: 0
   m_Name: player3
   m_TagString: Untagged
@@ -3382,6 +3401,7 @@ MonoBehaviour:
   canGoOn: 0
   enemy: {fileID: 0}
   ATK: 0
+  single: 
 --- !u!212 &1417532725
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3449,6 +3469,22 @@ Transform:
   m_Father: {fileID: 780327962}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1417532727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417532723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9914ee784ce444da3f371a63d45cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GM: {fileID: 0}
+  thisSlot: {fileID: 0}
+  enemySlot: {fileID: 0}
+  otherEnemySlots: {fileID: 0}
 --- !u!1 &1447077439
 GameObject:
   m_ObjectHideFlags: 0
@@ -3608,6 +3644,7 @@ GameObject:
   - component: {fileID: 1572380668}
   - component: {fileID: 1572380667}
   - component: {fileID: 1572380666}
+  - component: {fileID: 1572380669}
   m_Layer: 0
   m_Name: player2
   m_TagString: Untagged
@@ -3634,6 +3671,7 @@ MonoBehaviour:
   canGoOn: 0
   enemy: {fileID: 0}
   ATK: 0
+  single: 
 --- !u!212 &1572380667
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3701,6 +3739,22 @@ Transform:
   m_Father: {fileID: 780327962}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1572380669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572380665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9914ee784ce444da3f371a63d45cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GM: {fileID: 0}
+  thisSlot: {fileID: 0}
+  enemySlot: {fileID: 0}
+  otherEnemySlots: {fileID: 0}
 --- !u!1 &1580399987
 GameObject:
   m_ObjectHideFlags: 0

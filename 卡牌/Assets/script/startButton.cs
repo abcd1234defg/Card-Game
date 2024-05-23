@@ -34,6 +34,10 @@ public class startButton : MonoBehaviour
         ///////////////////////////////////////////
         else if(gamemanager.state == gamemanager.gamestate.playing)
         {
+            gamemanager.state = gamemanager.gamestate.singlePhase;
+        }
+        else if (gamemanager.state == gamemanager.gamestate.singlePhase)
+        {
             gamemanager.state = gamemanager.gamestate.end;
         }
         else if(gamemanager.state == gamemanager.gamestate.end)

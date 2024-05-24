@@ -351,7 +351,7 @@ MonoBehaviour:
   canGoOn: 0
   Num: {fileID: 0}
   number: {fileID: 0}
-  ATK: 0
+  ATK: 1
 --- !u!1 &273211556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,7 +1477,7 @@ MonoBehaviour:
   canGoOn: 0
   Num: {fileID: 0}
   number: {fileID: 0}
-  ATK: 0
+  ATK: 1
 --- !u!1 &597237767
 GameObject:
   m_ObjectHideFlags: 0
@@ -2086,7 +2086,7 @@ MonoBehaviour:
   canGoOn: 0
   Num: {fileID: 0}
   number: {fileID: 0}
-  ATK: 0
+  ATK: 1
 --- !u!1 &838419131
 GameObject:
   m_ObjectHideFlags: 0

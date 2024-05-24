@@ -20,6 +20,10 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gamemanager.state == gamemanager.gamestate.beforeStart)
+        {
+            ATK = 1;
+        }
         if(gamemanager.state == gamemanager.gamestate.playing)
         {
             if (transform.position.x < 0)

@@ -190,32 +190,56 @@ public class gamemanager : MonoBehaviour
     }
     public void pDamage()
     {
-        if(fire == 2 || water == 2 || grass == 2)
+        if (fire == 2)
         {
-            playerDamage = 2;
+            playerDamage = player1.GetComponent<Single>().ATK + player2.GetComponent<Single>().ATK + player3.GetComponent<Single>().ATK + 1;
         }
-        if (fire == 1 || water == 1 || grass == 1)
+        if (fire == 3)
         {
-            playerDamage = 2;
+            playerDamage = player1.GetComponent<Single>().ATK + player2.GetComponent<Single>().ATK + player3.GetComponent<Single>().ATK + 3;
         }
-        if (fire == 3 || water == 3 || grass == 3)
+        if (water == 2)
         {
-            playerDamage = 3;
+            playerDamage = player1.GetComponent<Single>().ATK + player2.GetComponent<Single>().ATK + player3.GetComponent<Single>().ATK;
+        }
+        if (water == 3)
+        {
+            playerDamage = player1.GetComponent<Single>().ATK + player2.GetComponent<Single>().ATK + player3.GetComponent<Single>().ATK;
+        }
+        if (grass == 2)
+        {
+            playerDamage = player1.GetComponent<Single>().ATK + player2.GetComponent<Single>().ATK + player3.GetComponent<Single>().ATK;
+        }
+        if (grass == 3)
+        {
+            playerDamage = player1.GetComponent<Single>().ATK + player2.GetComponent<Single>().ATK + player3.GetComponent<Single>().ATK;
         }
     }
     public void eDamage()
     {
-        if(enemyFire == 2 || enemyWater == 2 || enemyGrass == 2)
+        if (enemyFire == 2)
         {
-            enemyDamage = 2;
+            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK + 1;
         }
-        if (enemyFire == 1 || enemyWater == 1 || grass == 1)
+        if (enemyFire == 3)
         {
-            enemyDamage = 2;
+            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK + 3;
         }
-        if (enemyFire == 3 || enemyWater == 3 || grass == 3)
+        if (enemyWater == 2)
         {
-            enemyDamage = 3;
+            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
+        }
+        if (enemyWater == 3)
+        {
+            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
+        }
+        if (enemyGrass == 2)
+        {
+            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
+        }
+        if (enemyGrass == 3)
+        {
+            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
         }
     }
 }

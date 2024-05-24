@@ -34,16 +34,23 @@ public class startButton : MonoBehaviour
         /////////////////////////////////////////
        
         ///////////////////////////////////////////
+        //
+
         else if(gamemanager.state == gamemanager.gamestate.playing)
         {
-            if(gamemanager.grass == 3 || gamemanager.enemyGrass == 3)
+                gamemanager.state = gamemanager.gamestate.singlePhase;
+        }
+        else if (gamemanager.state == gamemanager.gamestate.singlePhase)
+        {
+            if (gamemanager.grass == 3 || gamemanager.enemyGrass == 3)
             {
                 gamemanager.state = gamemanager.gamestate.chain1;//三草进一个state
             }
             else
                 gamemanager.state = gamemanager.gamestate.chain2;//二水进一个state
-
         }
+            
+
         else if(gamemanager.state == gamemanager.gamestate.end)
         {
             gamemanager.state=gamemanager.gamestate.beforeStart;

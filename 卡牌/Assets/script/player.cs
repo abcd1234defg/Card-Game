@@ -75,7 +75,7 @@ public class player : MonoBehaviour
             }
             GetComponent<SpriteRenderer>().color = Color.white;
             canGoOn = true;
-            print("111");
+          //  print("111");
         }
     }
 
@@ -86,37 +86,37 @@ public class player : MonoBehaviour
             if (theColor == "fire" && enemy.GetComponent<enemy>().color == "water")
             {
                 gamemanager.lose++;
-                print("1111");
+            //   print("1111");
                 canGoOn = false;
             }
             if (theColor == "water" && enemy.GetComponent<enemy>().color == "grass")
             {
                 gamemanager.lose++;
-                print("1111");
+            //    print("1111");
                 canGoOn = false;
             }
             if (theColor == "grass" && enemy.GetComponent<enemy>().color == "water")
             {
                 gamemanager.win++;
-                print("1111");
+            //    print("1111");
                 canGoOn = false;
             }
             if (theColor == "fire" && enemy.GetComponent<enemy>().color == "grass")
             {
                 gamemanager.win++;
-                print("1111");
+            //    print("1111");
                 canGoOn = false;
             }
             if (theColor == "water" && enemy.GetComponent<enemy>().color == "fire")
             {
                 gamemanager.win++;
-                print("1111");
+            //    print("1111");
                 canGoOn = false;
             }
             if (theColor == "grass" && enemy.GetComponent<enemy>().color == "fire")
             {
                 gamemanager.lose++;
-                print("1111");
+             //   print("1111");
                 canGoOn = false;
             }
         }

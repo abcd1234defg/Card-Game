@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class gamemanager : MonoBehaviour
 {
-    public enum gamestate { beforeStart, start, playing,chain1, chain2, end}//分别对应弃牌，出牌，对方出牌，结算四个阶段
+    public enum gamestate { beforeStart, start, playing, singlePhase,chain1, chain2, end}//分别对应弃牌，出牌，对方出牌，结算四个阶段
     public enum gamestate2 { win, lose, draw}//每局的胜负
     public enum gamestate3 { magicStart, magicEnd, none }
     public gamestate state;

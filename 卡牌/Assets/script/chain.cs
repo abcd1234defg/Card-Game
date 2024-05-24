@@ -127,7 +127,6 @@ public class chain : MonoBehaviour
                         }
                     }
                 }
-
             }
             gamemanager.state = gamemanager.gamestate.end;
         }

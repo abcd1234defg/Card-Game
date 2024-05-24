@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class startButton : MonoBehaviour
 {
     public gamemanager gamemanager;
@@ -53,9 +54,17 @@ public class startButton : MonoBehaviour
 
         else if(gamemanager.state == gamemanager.gamestate.end)
         {
-            gamemanager.state=gamemanager.gamestate.beforeStart;
-            creater.GetComponent<createCard>().isEmpty = true;
-            creater.GetComponent<createCard>().remake = false;
+            if(gamemanager.canOver)
+            {
+                gamemanager.state = gamemanager.gamestate.gameover;
+            }
+            else
+            {
+                gamemanager.state = gamemanager.gamestate.beforeStart;
+                creater.GetComponent<createCard>().isEmpty = true;
+                creater.GetComponent<createCard>().remake = false;
+            }
+
         }
         else if(gamemanager.state == gamemanager.gamestate.beforeStart)
         {
@@ -63,6 +72,10 @@ public class startButton : MonoBehaviour
             creater.GetComponent<createCard>().isEmpty = true;
             creater.GetComponent<createCard>().remake = false;
 
+        }
+        else if(gamemanager.state == gamemanager.gamestate.gameover)
+        {
+            SceneManager.LoadScene(0);
         }
     }
 

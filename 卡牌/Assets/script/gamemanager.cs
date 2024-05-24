@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 
 public class gamemanager : MonoBehaviour
 {
-    public enum gamestate { beforeStart, start, playing, singlePhase,chain1, chain2, end}//分别对应弃牌，出牌，对方出牌，结算四个阶段
+    public enum gamestate { beforeStart, start, playing, singlePhase,chain1, chain2, end, gameover}//分别对应弃牌，出牌，对方出牌，结算四个阶段
     public enum gamestate2 { win, lose, draw}//每局的胜负
     public enum gamestate3 { magicStart, magicEnd, none }
     public gamestate state;
@@ -29,6 +30,9 @@ public class gamemanager : MonoBehaviour
     public bool canO, canE;
     public int beiLv;//双方的伤害的倍率
     public int f,w,g;
+    string over;//游戏结束告知输赢
+    public bool canOver;
+    public TextMeshProUGUI winOrLose;
     // Start is called before the first frame update
     void Start()
     {
@@ -148,6 +152,24 @@ public class gamemanager : MonoBehaviour
             canDamage = false;
         }
         text.text = state.ToString();
+        //////////////////////////////////////////////////////////////////////////////////////
+        if(state == gamestate.end)
+        {
+            if(playerlife <= 0)
+            {
+                canOver = true;
+                over = "you lose";
+            }
+            if (enemylife <= 0)
+            {
+                canOver = true;
+                over = "you win";
+            }
+        }
+        if(state == gamestate.gameover)
+        {
+            winOrLose.text = over;
+        }
     }
     public void enemy()//骰三个十二面骰
     {

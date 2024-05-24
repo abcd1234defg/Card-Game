@@ -209,7 +209,7 @@ public class chain : MonoBehaviour
         {
             if(canGoOn2 == false)
             {
-                gamemanager.playerDamage += shield + heal + burn + eShield + eHeal + eBurn;
+                gamemanager.enemyDamage += shield + heal + burn + eShield + eHeal + eBurn;
                 shield = heal = burn = eShield = eHeal = eBurn = 0;
                 canGoOn2 = true;
             }         

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5011998767368454845}
   - component: {fileID: -5357937379101882219}
   - component: {fileID: -1696130298198294704}
+  - component: {fileID: -7446822141551856351}
   m_Layer: 5
   m_Name: waterCard
   m_TagString: water
@@ -35,7 +36,7 @@ RectTransform:
   - {fileID: 3560324780513698107}
   - {fileID: 3082570468151882739}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -113,7 +114,21 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_SortAtRoot: 0
+--- !u!114 &-7446822141551856351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6985899243443472761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 882610b69990e5c4f9f1a6751606f7e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Single: 
+  ATK: 0
+  rare: 0
 --- !u!1 &8301549050636103523
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +160,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1966820179592410419}
-  m_RootOrder: -1
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

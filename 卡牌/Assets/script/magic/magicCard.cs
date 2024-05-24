@@ -35,7 +35,7 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     // Update is called once per frame
     void Update()
     {
-        print("a=" + a);
+        
         if(gamemanager.state == gamemanager.gamestate.start)
         {
             if(draw)

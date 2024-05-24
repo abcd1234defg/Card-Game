@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class gamemanager : MonoBehaviour
 {
-    public enum gamestate { beforeStart, start, playing,chain, end}//分别对应弃牌，出牌，对方出牌，结算四个阶段
+    public enum gamestate { beforeStart, start, playing,chain1, chain2, end}//分别对应弃牌，出牌，对方出牌，结算四个阶段
     public enum gamestate2 { win, lose, draw}//每局的胜负
     public enum gamestate3 { magicStart, magicEnd, none }
     public gamestate state;
@@ -92,7 +92,7 @@ public class gamemanager : MonoBehaviour
           if(win == lose)
             {
                 state2 = gamestate2.draw;
-                if(fire == 3 || water == 3 || grass == 3)
+                /*if(fire == 3 || water == 3 || grass == 3)
                 {
                     if(enemyFire == enemyGrass && enemyWater == enemyGrass)
                     {
@@ -105,7 +105,7 @@ public class gamemanager : MonoBehaviour
                     {
                         state2 = gamestate2.lose;
                     }
-                }
+                }*/
             }
           if(canDamage == true)
             {
@@ -194,7 +194,11 @@ public class gamemanager : MonoBehaviour
         {
             playerDamage = 2;
         }
-        if(fire == 3 || water == 3 || grass == 3)
+        if (fire == 1 || water == 1 || grass == 1)
+        {
+            playerDamage = 2;
+        }
+        if (fire == 3 || water == 3 || grass == 3)
         {
             playerDamage = 3;
         }
@@ -205,7 +209,11 @@ public class gamemanager : MonoBehaviour
         {
             enemyDamage = 2;
         }
-        if(enemyFire == 3 || enemyWater == 3 || grass == 3)
+        if (enemyFire == 1 || enemyWater == 1 || grass == 1)
+        {
+            enemyDamage = 2;
+        }
+        if (enemyFire == 3 || enemyWater == 3 || grass == 3)
         {
             enemyDamage = 3;
         }

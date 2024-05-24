@@ -8,14 +8,13 @@ using UnityEngine;
 public class chain : MonoBehaviour
 {
     public gamemanager gamemanager;
-    enum owner { player, enemy };
-    owner o;
-    enum marking { shield, burn, heal }
-    marking mark1, mark2, mark3;
-    public bool canRun, canRun2;
-    public int shield, heal, burn;
-    int eShield, eHeal, eBurn;
-    public GameObject p1, p2, p3, e1, e2, e3;
+
+    public bool canRun, canRun2;//让敌我双方的挂印机只挂一次
+    bool canC, canC2;//用来让三水和二草只触发一次
+    public int shield, heal, burn;//我方印记
+    public int eShield, eHeal, eBurn;//敌方印记
+    public GameObject p1, p2, p3, e1, e2, e3;//目前没用
+    bool canGoOn, canGoOn2;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +24,9 @@ public class chain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gamemanager.state == gamemanager.gamestate.playing)
+        if (gamemanager.state == gamemanager.gamestate.playing)//印记在playing阶段挂上去
         {
+            canC = canC2 = true;
             if (canRun == false)
             {
                 if (gamemanager.water == 2)
@@ -44,6 +44,7 @@ public class chain : MonoBehaviour
                     twoGrass();
                     canRun = true;
                 }
+               
             }
             if (canRun2 == false)
             {
@@ -62,48 +63,78 @@ public class chain : MonoBehaviour
                     etwoGrass();
                     canRun2 = true;
                 }
+                
             }
-
-
         }
-        if (gamemanager.state == gamemanager.gamestate.chain)
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+        if(gamemanager.state == gamemanager.gamestate.chain1)//////////////////////////////3草
+        {
+            if(canRun == false)
+            {
+                if (gamemanager.grass == 3)
+                {
+                    threeGrass();
+                    canRun = true;
+                }
+            }
+            if(canRun2 == false)
+            {
+                if (gamemanager.enemyGrass == 3)
+                {
+                    ethreeGrass();
+                    canRun2 = true;
+                }
+            }
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        if (gamemanager.state == gamemanager.gamestate.chain2)////////////////////2水
         {
             if (gamemanager.win > gamemanager.lose)
             {
-
-                for (int i = 0; i < eShield; i++)
+                if(gamemanager.playerDamage >0)
                 {
-                    if (gamemanager.playerDamage >= 2)
+                    for (int i = 0; i < eShield; i = 0)
                     {
-                        gamemanager.playerDamage -= 2;
-                        eShield--;
+                        if (gamemanager.playerDamage >= 1)
+                        {
+                            gamemanager.playerDamage--;
+                            eShield--;
+                            print("shield");
+                        }
+                        if (gamemanager.playerDamage == 0)
+                        {
+                            break;
+                        }
                     }
+                   
                 }
             }
             if (gamemanager.win < gamemanager.lose)
             {
-
-                for (int i = 0; i < shield; i++)
+                if(gamemanager.enemyDamage >0)
                 {
-                    if (gamemanager.enemyDamage >= 2)
+                    for (int i = 0; i < shield; i = 0)
                     {
-                        gamemanager.enemyDamage -= 2;
-                        shield--;
+                        if (gamemanager.enemyDamage >= 1)
+                        {
+                            gamemanager.enemyDamage--;
+                            shield--;
+                            print("shield");
+                        }
+                        if (gamemanager.enemyDamage == 0)
+                        {
+                            break;
+                        }
                     }
                 }
+
             }
-            canRun = false;
-            canRun2 = false;
-            if (canRun == false || canRun2 == false)
-            {
-                gamemanager.state = gamemanager.gamestate.end;
-                canRun = true;
-                canRun2 = true;
-            }
+            gamemanager.state = gamemanager.gamestate.end;
         }
-        if (gamemanager.state == gamemanager.gamestate.end)
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        if (gamemanager.state == gamemanager.gamestate.end)/////////////////////////三水二草
         {
-            if (canRun)
+            if (canC)
             {
                 for (int i = 0; i < burn; i++)
                 {
@@ -113,9 +144,10 @@ public class chain : MonoBehaviour
                 {
                     gamemanager.playerlife++;
                 }
+                canC = false;
                 canRun = false;
             }
-            if (canRun2)
+            if (canC2)
             {
                 for (int i = 0; i < eBurn; i++)
                 {
@@ -125,13 +157,14 @@ public class chain : MonoBehaviour
                 {
                     gamemanager.enemylife++;
                 }
+                canC2 = false;
                 canRun2 = false;
             }
         }
     }
     void twoWater()
     {
-        shield++;
+        shield += 2;
     }
     void threeWater()
     {
@@ -141,9 +174,26 @@ public class chain : MonoBehaviour
     {
         burn++;
     }
+    void threeGrass()
+    {
+        if (gamemanager.state == gamemanager.gamestate.chain1)
+        {
+            if(canGoOn == false)
+            {
+                gamemanager.playerDamage += shield + heal + burn + eShield + eHeal + eBurn;
+                shield = heal = burn = eShield = eHeal = eBurn = 0;
+                canGoOn = true;
+            }
+         if(canGoOn)
+            {
+                gamemanager.state = gamemanager.gamestate.chain2;
+                canGoOn = false;
+            }
+        }
+    }
     void etwoWater()
     {
-        eShield++;
+        eShield += 2;
     }
     void ethreeWater()
     {
@@ -152,5 +202,22 @@ public class chain : MonoBehaviour
     void etwoGrass()
     {
         eBurn++;
+    }
+    void ethreeGrass()
+    {
+        if (gamemanager.state == gamemanager.gamestate.chain1)
+        {
+            if(canGoOn2 == false)
+            {
+                gamemanager.playerDamage += shield + heal + burn + eShield + eHeal + eBurn;
+                shield = heal = burn = eShield = eHeal = eBurn = 0;
+                canGoOn2 = true;
+            }         
+            if(canGoOn2)
+            {
+                gamemanager.state = gamemanager.gamestate.chain2;
+                canGoOn2 = false;
+            }        
+        }
     }
 }

@@ -9,6 +9,8 @@ TagManager:
   - grass
   - mouse
   - number
+  - Playerlife
+  - Enemylife
   layers:
   - Default
   - TransparentFX

@@ -25,7 +25,7 @@ public class Single : MonoBehaviour
             ATK= PL.ATK;
             single= PL.single;
         }
-        else if (GM.GetComponent<gamemanager>().state == gamemanager.gamestate.singlePhase)
+        if (GM.GetComponent<gamemanager>().state == gamemanager.gamestate.singlePhase)
         {
             if (SingleButtom == true)
             {
@@ -33,21 +33,21 @@ public class Single : MonoBehaviour
                 SingleButtom = false;
             }
         }
-        else if (GM.GetComponent<gamemanager>().state == gamemanager.gamestate.end) { SingleButtom = true; }
+        if (GM.GetComponent<gamemanager>().state == gamemanager.gamestate.end) { SingleButtom = true; }
     }
     void Effect()
     {
         //斩击效果
-        if (single == "Slash") { print("Slash"); }
+        if (single == "Slash(Clone)") { print("Slash"); }
         //十字斩效果
-        else if (single == "DoubleAttack")
+        if (single == "DoubleAttack(Clone)")
         {
             print("DoubleAttack");
         }
         //牙突效果
-        else if (single == "Rush") { print("Rush"); }
+        if (single == "Rush(Clone)") { print("Rush"); }
         //登龙剑效果
-        else if (single == "DragonSlash")
+        if (single == "DragonSlash(Clone)")
         {
             print("DragonSlash");
             ATK += 1;
@@ -55,21 +55,21 @@ public class Single : MonoBehaviour
             friendSlots2.GetComponent<Single>().ATK += 1;
         }
         //锤击效果
-        else if (single == "SlashH") { print("Crush"); }
+        if (single == "SlashH(Clone)") { print("Crush"); }
         //盾击效果
-        else if (single == "ShieldAttack")
+        if (single == "ShieldAttack(Clone)")
         {
             print("ShieldAttack");
             enemySlot.GetComponent<enemy>().ATK -= 1;
         }
         //圣疗术效果
-        else if (single == "LayOnHand")
+        if (single == "LayonHand(Clone)")
         {
             print("LayOnHand");
             GM.GetComponent<gamemanager>().playerlife += 2;
         }
         //神圣打击效果
-        else if (single == "DivineStrike") 
+        if (single == "DivineStrike(Clone)") 
         { 
             print("DivineStrike");
             enemySlot.GetComponent<enemy>().ATK -= 1;
@@ -77,21 +77,21 @@ public class Single : MonoBehaviour
             otherEnemySlots2.GetComponent<enemy>().ATK -= 1;
         }
         //敲击效果
-        else if (single == "SlashF") { print("Bonk"); }
+        if (single == "SlashF(Clone)") { print("Bonk"); }
         //护盾术效果
-        else if (single == "Shield") 
+        if (single == "Shield(Clone)") 
         {
             print("Shield");
             enemySlot.GetComponent<enemy>().ATK = 0;
         }
         //巫术箭效果
-        else if (single == "WitchBolt") 
+        if (single == "WitchBolt(Clone)") 
         {
             print("WitchBolt");
             GM.GetComponent<gamemanager>().enemylife -= 2;
         }
         //火球术效果
-        else if (single == "FireBall") { print("FireBall"); }
+        if (single == "FireBall(Clone)") { print("FireBall"); }
 
 
     }

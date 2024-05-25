@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class createCard : MonoBehaviour
 {
-    public bool isEmpty, a;//用来判断这个位置有没有手牌，这个a貌似没有啥用
+    public bool isEmpty;//用来判断这个位置有没有手牌，这个a貌似没有啥用
     public gamemanager gamemanager;
     public int cardChoice;//用于随机生成三种牌
     public GameObject fireCard, waterCard, grassCard;//三种攻击牌
@@ -14,6 +14,7 @@ public class createCard : MonoBehaviour
     bool createC;
     int number;
     public int createNumber;
+    int a;
 
     public TextAsset Database;
     public List<string> LeftCardlist = new List<string>();
@@ -23,8 +24,9 @@ public class createCard : MonoBehaviour
     void Start()
     {
         isEmpty = true;
-        a = true;
-        createNumber = 6;
+        a = 3;
+  
+        createNumber = 3;
         Carddata = Database.text.Split("\n");
         LeftCardlist = Carddata.ToList();
     }
@@ -41,8 +43,11 @@ public class createCard : MonoBehaviour
                 create();
                 createNumber = 0;
                 remake = true;
+                
             }
+            
         }
+        a = transform.childCount;
         if (gamemanager.state == gamemanager.gamestate.start)
         {
 
@@ -58,7 +63,7 @@ public class createCard : MonoBehaviour
     }
     void create()
     {
-        while (transform.childCount < createNumber)
+        while (transform.childCount < (a + (createNumber)))
         {
             if (LeftCardlist.Count == 0)
             {

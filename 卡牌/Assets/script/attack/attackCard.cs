@@ -46,8 +46,10 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         {
             if (isDraw == true)
             {
-                print("asd");
+                createCard.remake = false;
                 Destroy(gameObject);
+                print("asd");
+                
             }
         }
         if (gamemanager.state == gamemanager.gamestate.playing)

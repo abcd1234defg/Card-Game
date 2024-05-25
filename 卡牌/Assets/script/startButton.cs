@@ -70,7 +70,7 @@ public class startButton : MonoBehaviour
         {
             gamemanager.state = gamemanager.gamestate.start;
             creater.GetComponent<createCard>().isEmpty = true;
-            creater.GetComponent<createCard>().remake = false;
+            //creater.GetComponent<createCard>().remake = false;
 
         }
         else if(gamemanager.state == gamemanager.gamestate.gameover)

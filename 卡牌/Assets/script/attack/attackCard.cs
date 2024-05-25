@@ -19,7 +19,7 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     private Color color;
     public TextMeshProUGUI text;
     createCard createCard;
-   
+    public string imformation;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +48,7 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
             {
                 createCard.remake = false;
                 Destroy(gameObject);
+                createCard.LeftCardlist.Add(imformation);
                 print("asd");
                 
             }
@@ -57,6 +58,7 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
             if (isChoose == true)
             {
                 Destroy(gameObject);
+                createCard.LeftCardlist.Add(imformation);
             }
 
         }

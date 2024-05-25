@@ -86,7 +86,7 @@ public class createCard : MonoBehaviour
             GameObject cardObject = null;
             GameObject prefab = Resources.Load<GameObject>(cardName);
             cardObject = Instantiate(prefab, transform);
-
+            cardObject.GetComponent<attackCard>().imformation = selectedCard;
             if (cardObject != null)
             {
                 Handcard.Add(cardObject);

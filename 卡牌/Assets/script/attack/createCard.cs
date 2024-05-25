@@ -57,59 +57,59 @@ public class createCard : MonoBehaviour
     }
     void create()
     {
-        //while (transform.childCount < createNumber)
-        //{
-        //    int randomIndex = Random.Range(0, LeftCardlist.Count);
-        //    string selectedCard = LeftCardlist[randomIndex];
-
-        //    string[] cardInfo = selectedCard.Split(',');
-        //    string cardType = cardInfo[0].Trim();
-        //    string cardName = cardInfo[1].Trim();
-
-        //    GameObject cardObject = null;
-        //    GameObject prefab = Resources.Load<GameObject>(cardName);
-        //    cardObject = Instantiate(prefab, transform);
-
-        //    if (cardObject != null)
-        //    {
-        //        Handcard.Add(cardObject);
-        //    }
-
-        //    LeftCardlist.Remove(selectedCard);
-
-        //}
-        if (isEmpty == true)
+        while (transform.childCount < createNumber)
         {
-            for (int i = 0; i < createNumber; i++)
+            int randomIndex = Random.Range(0, LeftCardlist.Count);
+            string selectedCard = LeftCardlist[randomIndex];
+
+            string[] cardInfo = selectedCard.Split(',');
+            string cardType = cardInfo[0].Trim();
+            string cardName = cardInfo[1].Trim();
+
+            GameObject cardObject = null;
+            GameObject prefab = Resources.Load<GameObject>(cardName);
+            cardObject = Instantiate(prefab, transform);
+
+            if (cardObject != null)
             {
-                cardChoice = Random.Range(1, 4);
-                if (cardChoice == 1)
-                {
-
-                    Instantiate(fireCard, transform);
-                    cardChoice = 0;
-                    isEmpty = false;
-
-
-                }
-                if (cardChoice == 2)
-                {
-
-                    Instantiate(waterCard, transform);
-
-                    cardChoice = 0;
-                    isEmpty = false;
-
-                }
-                if (cardChoice == 3)
-                {
-                    Instantiate(grassCard, transform);
-
-                    cardChoice = 0;
-                    isEmpty = false;
-                }
+                Handcard.Add(cardObject);
             }
+
+            LeftCardlist.Remove(selectedCard);
+
         }
+        //if (isEmpty == true)
+        //{
+        //    for (int i = 0; i < createNumber; i++)
+        //    {
+        //        cardChoice = Random.Range(1, 4);
+        //        if (cardChoice == 1)
+        //        {
+
+        //            Instantiate(fireCard, transform);
+        //            cardChoice = 0;
+        //            isEmpty = false;
+
+
+        //        }
+        //        if (cardChoice == 2)
+        //        {
+
+        //            Instantiate(waterCard, transform);
+
+        //            cardChoice = 0;
+        //            isEmpty = false;
+
+        //        }
+        //        if (cardChoice == 3)
+        //        {
+        //            Instantiate(grassCard, transform);
+
+        //            cardChoice = 0;
+        //            isEmpty = false;
+        //        }
+        //    }
+        //}
 
     }
 

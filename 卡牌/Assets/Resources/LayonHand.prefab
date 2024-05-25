@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 8397542726709818719}
   - component: {fileID: 3926143071910261353}
   - component: {fileID: 6816330974807980653}
+  - component: {fileID: 3228350603562685562}
   m_Layer: 5
   m_Name: LayonHand
   m_TagString: water
@@ -304,3 +305,15 @@ MonoBehaviour:
   Single: 
   ATK: 0
   rare: 0
+--- !u!210 &3228350603562685562
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9138937071460375684}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0

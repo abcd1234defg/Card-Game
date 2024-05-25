@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 899841566629909202}
   - component: {fileID: 5659485344664196580}
   - component: {fileID: 3904488011178743358}
+  - component: {fileID: 69520165606756589}
   m_Layer: 5
   m_Name: SlashF
   m_TagString: grass
@@ -169,6 +170,18 @@ MonoBehaviour:
   Single: 
   ATK: 0
   rare: 0
+--- !u!210 &69520165606756589
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442187729412045577}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &5081978873558008024
 GameObject:
   m_ObjectHideFlags: 0

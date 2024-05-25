@@ -32,7 +32,9 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         position = GameObject.Find("attack card area");
         createCard = position.GetComponent<createCard>();
         color = GetComponent<Image>().color;
+        text=transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         text.text = null;
+        
         
  
     }

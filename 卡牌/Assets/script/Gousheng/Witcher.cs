@@ -11,10 +11,11 @@ public class Witcher : MonoBehaviour
     void Start()
     {
         rare = Random.Range(1, 11);
-        if (rare <= 5) { Single = "Bonk"; }//当出生点数是5以下时，生成“仗击”
-        if (rare > 5 && rare < 8) { Single = "Shield"; }//当出生点数是6和7时，生成“护盾术”
-        if (rare > 7 && rare < 10) { Single = "WitchBolt"; }//当出生点数是8和9时，生成“巫术箭”
-        if (rare == 10) { Single = "FireBall"; }//当出生点数是10时，生成“火球术”
+        Single = gameObject.name;
+        //if (rare <= 5) { Single = "Bonk"; }//当出生点数是5以下时，生成“仗击”
+        //if (rare > 5 && rare < 8) { Single = "Shield"; }//当出生点数是6和7时，生成“护盾术”
+        //if (rare > 7 && rare < 10) { Single = "WitchBolt"; }//当出生点数是8和9时，生成“巫术箭”
+        //if (rare == 10) { Single = "FireBall"; }//当出生点数是10时，生成“火球术”
         Cardeffect();
         attackCard = GetComponent<attackCard>();
     }
@@ -31,7 +32,7 @@ public class Witcher : MonoBehaviour
 
     void Cardeffect()
     {
-        if (Single == "Bonk") { ATK = 1; }
+        if (Single == "SlashF") { ATK = 1; }
         if (Single == "Shield") { ATK = 0; }
         if (Single == "WitchBolt") { ATK = 2; }
         if (Single == "FireBall") { ATK = 5; }

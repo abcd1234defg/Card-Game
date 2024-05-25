@@ -55,7 +55,7 @@ public class Single : MonoBehaviour
             friendSlots2.GetComponent<Single>().ATK += 1;
         }
         //锤击效果
-        else if (single == "Crush") { print("Crush"); }
+        else if (single == "SlashH") { print("Crush"); }
         //盾击效果
         else if (single == "ShieldAttack")
         {
@@ -77,7 +77,7 @@ public class Single : MonoBehaviour
             otherEnemySlots2.GetComponent<enemy>().ATK -= 1;
         }
         //敲击效果
-        else if (single == "Bonk") { print("Bonk"); }
+        else if (single == "SlashF") { print("Bonk"); }
         //护盾术效果
         else if (single == "Shield") 
         {

@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 7946354181662095207}
   - component: {fileID: 3220489119055409233}
   - component: {fileID: 1341174872206628334}
+  - component: {fileID: 7084548235489864947}
   m_Layer: 5
   m_Name: FireBall
   m_TagString: grass
@@ -304,3 +305,15 @@ MonoBehaviour:
   Single: 
   ATK: 0
   rare: 0
+--- !u!210 &7084548235489864947
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7212806450099773116}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0

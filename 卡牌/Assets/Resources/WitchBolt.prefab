@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1933018833940894906}
   - component: {fileID: 6351501197107106700}
   - component: {fileID: 5201874442378747096}
+  - component: {fileID: 7482973094495612864}
   m_Layer: 5
   m_Name: WitchBolt
   m_TagString: grass
@@ -169,6 +170,18 @@ MonoBehaviour:
   Single: 
   ATK: 0
   rare: 0
+--- !u!210 &7482973094495612864
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192715191835475297}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &8659830762267039314
 GameObject:
   m_ObjectHideFlags: 0

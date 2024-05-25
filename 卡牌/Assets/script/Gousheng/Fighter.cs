@@ -11,10 +11,11 @@ public class Fighter : MonoBehaviour
     void Start()
     {
         rare = Random.Range(1, 11);
-        if (rare <= 5) { Single = "Slash"; }//当出生点数是5以下时，生成“斩击”
-        if (rare > 5 && rare < 8) { Single = "DoubleAttack"; }//当出生点数是6和7时，生成“二连斩”
-        if (rare > 7 && rare < 10) { Single = "Rush"; }//当出生点数是8和9时，生成“牙突”
-        if (rare == 10) { Single = "DragonSlash"; }//当出生点数是10时，生成“登龙剑”
+        Single = gameObject.name;
+        //if (rare <= 5) { Single = "Slash"; }//当出生点数是5以下时，生成“斩击”
+        //if (rare > 5 && rare < 8) { Single = "DoubleAttack"; }//当出生点数是6和7时，生成“二连斩”
+        //if (rare > 7 && rare < 10) { Single = "Rush"; }//当出生点数是8和9时，生成“牙突”
+        //if (rare == 10) { Single = "DragonSlash"; }//当出生点数是10时，生成“登龙剑”
         Cardeffect();
         attackCard = GetComponent<attackCard>();
     }

@@ -179,7 +179,7 @@ public class chain : MonoBehaviour
         {
             if(canGoOn == false)
             {
-                gamemanager.playerDamage += shield + heal + burn + eShield + eHeal + eBurn;
+                gamemanager.enemylife -= shield + heal + burn + eShield + eHeal + eBurn;
                 shield = heal = burn = eShield = eHeal = eBurn = 0;
                 canGoOn = true;
             }
@@ -208,7 +208,7 @@ public class chain : MonoBehaviour
         {
             if(canGoOn2 == false)
             {
-                gamemanager.enemyDamage += shield + heal + burn + eShield + eHeal + eBurn;
+                gamemanager.playerlife -= shield + heal + burn + eShield + eHeal + eBurn;
                 shield = heal = burn = eShield = eHeal = eBurn = 0;
                 canGoOn2 = true;
             }         

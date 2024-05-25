@@ -19,7 +19,7 @@ public class gamemanager : MonoBehaviour
     public int win, lose;//跟敌人对比时赢和输的次数
     public TextMesh text;
     public int drawCard;//弃牌的数量
-    public int enemylife = 10, playerlife = 10;
+    public int enemylife = 20, playerlife = 10;
     public int playerDamage, enemyDamage;
     public int magicNum;
     bool canDamage;
@@ -44,7 +44,7 @@ public class gamemanager : MonoBehaviour
         enemy3 = GameObject.Find("enemy3");
         Application.targetFrameRate = 60;
         state = gamestate.beforeStart;
-        enemylife = 10; playerlife = 10;
+        enemylife = 20; playerlife = 10;
         canDamage = true;
         state3 = gamestate3.none;
         magicManager = GetComponent<magicManager>();
@@ -153,17 +153,19 @@ public class gamemanager : MonoBehaviour
         }
         text.text = state.ToString();
         //////////////////////////////////////////////////////////////////////////////////////
-        if(state == gamestate.end)
+        if(state != gamestate.gameover)
         {
             if(playerlife <= 0)
             {
                 canOver = true;
                 over = "you lose";
+                state = gamestate.gameover;
             }
             if (enemylife <= 0)
             {
                 canOver = true;
                 over = "you win";
+                state = gamestate.gameover;
             }
         }
         if(state == gamestate.gameover)

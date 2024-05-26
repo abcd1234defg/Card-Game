@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TianyiTest.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/SampleScene 1.unity
     guid: cff3bc4c94d7a2b44884240522728568
+  - enabled: 1
+    path: Assets/Scenes/TianyiTest.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: c2cc84a2505ef5d44899957985014a35

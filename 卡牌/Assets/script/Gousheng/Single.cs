@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Single : MonoBehaviour
 {
     public GameObject GM;
@@ -10,6 +10,8 @@ public class Single : MonoBehaviour
     public string single;
     public player PL;
     bool SingleButtom=true;
+    public TextMeshProUGUI TextAtk;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,15 @@ public class Single : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PL.theColor == null) 
+        { 
+            TextAtk.text = " ";
+        }
+        if (PL.theColor !=null)
+        {
+            TextAtk.text = ATK.ToString();
+        }
+        if (GM.GetComponent<gamemanager>().state == gamemanager.gamestate.beforeStart) { TextAtk.text = " "; }
         if (GM.GetComponent<gamemanager>().state ==gamemanager.gamestate.start)
         {
             ATK= PL.ATK;

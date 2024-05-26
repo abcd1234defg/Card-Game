@@ -52,11 +52,7 @@ public class cardlist : MonoBehaviour
             LeftCardlist.Remove(selectedCard);
 
         }
-       void getback()
-
-        {
-            
-        }
+      
 
     }
 }

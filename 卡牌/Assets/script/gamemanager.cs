@@ -221,19 +221,7 @@ public class gamemanager : MonoBehaviour
         {
             playerDamage = player1.GetComponent<Single>().ATK + player2.GetComponent<Single>().ATK + player3.GetComponent<Single>().ATK + 3;
         }
-        if (water == 2)
-        {
-            playerDamage = player1.GetComponent<Single>().ATK + player2.GetComponent<Single>().ATK + player3.GetComponent<Single>().ATK;
-        }
-        if (water == 3)
-        {
-            playerDamage = player1.GetComponent<Single>().ATK + player2.GetComponent<Single>().ATK + player3.GetComponent<Single>().ATK;
-        }
-        if (grass == 2)
-        {
-            playerDamage = player1.GetComponent<Single>().ATK + player2.GetComponent<Single>().ATK + player3.GetComponent<Single>().ATK;
-        }
-        if (grass == 3)
+        if (water == 2 || water == 3 || grass == 2 || grass == 3)
         {
             playerDamage = player1.GetComponent<Single>().ATK + player2.GetComponent<Single>().ATK + player3.GetComponent<Single>().ATK;
         }
@@ -248,19 +236,7 @@ public class gamemanager : MonoBehaviour
         {
             enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK + 3;
         }
-        if (enemyWater == 2)
-        {
-            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
-        }
-        if (enemyWater == 3)
-        {
-            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
-        }
-        if (enemyGrass == 2)
-        {
-            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
-        }
-        if (enemyGrass == 3)
+        if (enemyWater == 2 || enemyWater == 3 || enemyGrass == 2 || enemyGrass == 3)
         {
             enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
         }

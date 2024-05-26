@@ -51,7 +51,7 @@ public class createCard : MonoBehaviour
         if (gamemanager.state == gamemanager.gamestate.start)
         {
 
-            print("asdasda");
+            
             if (remake == false)
             {
                 print("ahsuidhuiadhs");

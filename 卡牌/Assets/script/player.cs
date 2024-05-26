@@ -92,7 +92,7 @@ public class player : MonoBehaviour
             GetComponent<Image>().color = new Vector4(1, 1, 1, 0);
             GetComponent<Image>().sprite = null;
             canGoOn = true;
-            print("111");
+            
         }
         if (gamemanager.state == gamemanager.gamestate.animation)
         {
@@ -117,8 +117,9 @@ public class player : MonoBehaviour
 
 
         }
-        if (gamemanager.state == gamemanager.gamestate.chain1 || gamemanager.state == gamemanager.gamestate.chain2)
+        if (gamemanager.state == gamemanager.gamestate.end)
         {
+            
             Destroy(theA);
             t = 1;
             canA = false;

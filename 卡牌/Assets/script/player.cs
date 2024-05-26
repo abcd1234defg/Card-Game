@@ -15,6 +15,11 @@ public class player : MonoBehaviour
     public int ATK;
     public string single;
     public string cardName;
+    public GameObject anim;
+    bool canA;
+    GameObject theA;
+    float t;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +39,7 @@ public class player : MonoBehaviour
         {
             theColor = "1";
         }
-        if(this.gameObject.name == ("player1"))
+        if (this.gameObject.name == ("player1"))
         {
             enemy = GameObject.Find("enemy1");
         }
@@ -51,36 +56,36 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(theColor == "fire")
+        if (theColor == "fire")
         {
             //GetComponent<SpriteRenderer>().color = Color.red;
             GetComponent<Image>().sprite = Resources.Load<Sprite>(cardName);
             GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
         }
-        if(theColor == "water")
+        if (theColor == "water")
         {
             //GetComponent<SpriteRenderer>().color = Color.blue;
             GetComponent<Image>().sprite = Resources.Load<Sprite>(cardName);
             GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
         }
-        if(theColor == "grass")
+        if (theColor == "grass")
         {
             //GetComponent <SpriteRenderer>().color = Color.green;
             GetComponent<Image>().sprite = Resources.Load<Sprite>(cardName);
             GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
         }
-        if(gamemanager.state == gamemanager.gamestate.playing)
+        if (gamemanager.state == gamemanager.gamestate.playing)
         {
             compare();
         }
-        if(gamemanager.state == gamemanager.gamestate.beforeStart)
+        if (gamemanager.state == gamemanager.gamestate.beforeStart)
         {
-            if(gameObject.name == "player1")
+            if (gameObject.name == "player1")
             {
                 theColor = null;
             }
-           
-            if(gameObject.name == "player2" || gameObject.name == "player3")
+
+            if (gameObject.name == "player2" || gameObject.name == "player3")
             {
                 theColor = "1";
             }
@@ -88,6 +93,36 @@ public class player : MonoBehaviour
             GetComponent<Image>().sprite = null;
             canGoOn = true;
             print("111");
+        }
+        if (gamemanager.state == gamemanager.gamestate.animation)
+        {
+            
+            GetComponent<Image>().color = new Vector4(1, 1, 1, 0);
+            t = 2;
+
+
+            if (canA == false)
+            {
+                theA = Instantiate(anim, transform);
+                theA.GetComponent<Image>().sprite = GetComponent<Image>().sprite;
+                canA = true;
+                
+            }
+            t -= Time.deltaTime;
+            if (t <= 0)
+            {
+                
+            }
+            
+
+
+        }
+        if (gamemanager.state == gamemanager.gamestate.chain1 || gamemanager.state == gamemanager.gamestate.chain2)
+        {
+            Destroy(theA);
+            t = 1;
+            canA = false;
+            GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
         }
     }
 

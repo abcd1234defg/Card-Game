@@ -69,6 +69,8 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         {
             player1.GetComponent<player>().theColor = gameObject.tag.ToString();
             card = player1;
+            string[] cn = gameObject.name.ToString().Split('(');
+            card.GetComponent<player>().cardName = cn[0];
             if(player2.GetComponent<player>().theColor == "1")
             {
                 player2.GetComponent<player>().theColor = null;
@@ -79,6 +81,8 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         {
             player2.GetComponent<player>().theColor = gameObject.tag.ToString();
             card = player2;
+            string[] cn = gameObject.name.ToString().Split('(');
+            card.GetComponent<player>().cardName = cn[0];
             if (player3.GetComponent<player>().theColor == "1")
             {
                 player3.GetComponent<player>().theColor = null;
@@ -89,6 +93,8 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         {
             player3.GetComponent<player>().theColor = gameObject.tag.ToString();
             card = player3;
+            string[] cn = gameObject.name.ToString().Split('(');
+            card.GetComponent<player>().cardName = cn[0];
             text.text = ("3");
         }
 
@@ -98,7 +104,8 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     {
         if(card != null)
         {
-            card.GetComponent<SpriteRenderer>().color = Color.white;
+            card.GetComponent<Image>().color = new Vector4(1, 1,1,0);
+            card.GetComponent<Image>().sprite = null;
             card.GetComponent<player>().theColor = null;
             card = null;
             text.text = null;

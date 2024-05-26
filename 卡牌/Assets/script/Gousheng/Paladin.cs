@@ -32,9 +32,9 @@ public class Paladin : MonoBehaviour
 
     void Cardeffect()
     {
-        if (Single == "SlashH") { ATK = 1; }
-        if (Single == "ShieldAttack") { ATK = 2; }
-        if (Single == "LayOnHand") { ATK = 0; }
-        if (Single == "DivineStrike") { ATK = 2; }
+        if (Single == "SlashH(Clone)") { ATK = 1; }
+        if (Single == "ShieldAttack(Clone)") { ATK = 2; }
+        if (Single == "LayOnHand(Clone)") { ATK = 0; }
+        if (Single == "DivineStrike(Clone)") { ATK = 2; }
     }
 }

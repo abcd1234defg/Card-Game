@@ -71,7 +71,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4c1f76caa873e084f8f706b68087390f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3703600528c7d048b56fd25aaa573ee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -103,6 +103,7 @@ MonoBehaviour:
   isDraw: 0
   position: {fileID: 0}
   text: {fileID: 0}
+  imformation: 
 --- !u!212 &6351501197107106700
 SpriteRenderer:
   m_ObjectHideFlags: 0

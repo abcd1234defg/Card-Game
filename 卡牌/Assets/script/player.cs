@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
@@ -13,9 +14,11 @@ public class player : MonoBehaviour
     public GameObject enemy;//对应位置的敌人
     public int ATK;
     public string single;
+    public string cardName;
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Image>().sprite = null;
         canGoOn = true;
         manager = GameObject.Find("gamemanager");
         gamemanager = manager.GetComponent<gamemanager>();
@@ -50,15 +53,21 @@ public class player : MonoBehaviour
     {
         if(theColor == "fire")
         {
-            GetComponent<SpriteRenderer>().color = Color.red;
+            //GetComponent<SpriteRenderer>().color = Color.red;
+            GetComponent<Image>().sprite = Resources.Load<Sprite>(cardName);
+            GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
         }
         if(theColor == "water")
         {
-            GetComponent<SpriteRenderer>().color = Color.blue;
+            //GetComponent<SpriteRenderer>().color = Color.blue;
+            GetComponent<Image>().sprite = Resources.Load<Sprite>(cardName);
+            GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
         }
         if(theColor == "grass")
         {
-            GetComponent <SpriteRenderer>().color = Color.green;
+            //GetComponent <SpriteRenderer>().color = Color.green;
+            GetComponent<Image>().sprite = Resources.Load<Sprite>(cardName);
+            GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
         }
         if(gamemanager.state == gamemanager.gamestate.playing)
         {
@@ -75,7 +84,8 @@ public class player : MonoBehaviour
             {
                 theColor = "1";
             }
-            GetComponent<SpriteRenderer>().color = Color.white;
+            GetComponent<Image>().color = new Vector4(1, 1, 1, 0);
+            GetComponent<Image>().sprite = null;
             canGoOn = true;
             print("111");
         }

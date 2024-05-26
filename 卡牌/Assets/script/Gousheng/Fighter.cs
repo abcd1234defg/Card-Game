@@ -32,9 +32,9 @@ public class Fighter : MonoBehaviour
 
     void Cardeffect()
     {
-        if (Single == "Slash") { ATK = 1; }
-        if (Single == "DoubleAttack") { ATK = 2; }
-        if (Single == "Rush") { ATK = 3; }
-        if (Single == "DragonSlash") { ATK = 4; }
+        if (Single == "Slash(Clone)") { ATK = 1; }
+        if (Single == "DoubleAttack(Clone)") { ATK = 2; }
+        if (Single == "Rush(Clone)") { ATK = 3; }
+        if (Single == "DragonSlash(Clone)") { ATK = 4; }
     }
 }

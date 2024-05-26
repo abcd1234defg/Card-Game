@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class enemy : MonoBehaviour
 {
@@ -26,15 +27,16 @@ public class enemy : MonoBehaviour
         }
         if(gamemanager.state == gamemanager.gamestate.playing)
         {
-            if (transform.position.x < 0)
+            if (gameObject.name == ("enemy1"))
             {
                 enemy1();
+                
             }
-            if (transform.position.x == 0)
+            if (gameObject.name == ("enemy2"))
             {
                 enemy2();
             }
-            if (transform.position.x > 0)
+            if (gameObject.name == ("enemy3"))
             {
                 enemy3();
             }
@@ -42,7 +44,7 @@ public class enemy : MonoBehaviour
         if(gamemanager.state == gamemanager.gamestate.beforeStart)
         {
             color = null;
-            this.GetComponent<SpriteRenderer>().color = Color.white;
+            this.GetComponent<Image>().color = new Vector4(1,1, 1, 0);
             canGoOn = true;
         }
     }
@@ -92,7 +94,8 @@ public class enemy : MonoBehaviour
     {
         if (number.theColor == number.blockColor.water)
         {
-            this.GetComponent<SpriteRenderer>().color = Color.blue;
+            this.GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
+            this.GetComponent<Image>().sprite = Resources.Load<Sprite>("slm");
             color = "water";
             gamemanager.enemyWater++;
             canGoOn = false;
@@ -100,7 +103,8 @@ public class enemy : MonoBehaviour
         }
         if (number.theColor == number.blockColor.fire)
         {
-            this.GetComponent<SpriteRenderer>().color = Color.red;
+            this.GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
+            this.GetComponent<Image>().sprite = Resources.Load<Sprite>("ntrb4");
             color = "fire";
             gamemanager.enemyFire++;
             canGoOn = false;
@@ -108,7 +112,8 @@ public class enemy : MonoBehaviour
         }
         if (number.theColor == number.blockColor.grass)
         {
-            this.GetComponent<SpriteRenderer>().color = Color.green;
+            this.GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
+            this.GetComponent<Image>().sprite = Resources.Load<Sprite>("lvp");
             color = "grass";
             gamemanager.enemyGrass++;
             canGoOn = false;

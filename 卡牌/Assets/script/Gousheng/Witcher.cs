@@ -32,9 +32,9 @@ public class Witcher : MonoBehaviour
 
     void Cardeffect()
     {
-        if (Single == "SlashF") { ATK = 1; }
-        if (Single == "Shield") { ATK = 0; }
-        if (Single == "WitchBolt") { ATK = 2; }
-        if (Single == "FireBall") { ATK = 5; }
+        if (Single == "SlashF(Clone)") { ATK = 1; }
+        if (Single == "Shield(Clone)") { ATK = 0; }
+        if (Single == "WitchBolt(Clone)") { ATK = 2; }
+        if (Single == "FireBall(Clone)") { ATK = 5; }
     }
 }

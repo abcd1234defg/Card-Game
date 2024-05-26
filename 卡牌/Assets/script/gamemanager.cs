@@ -48,7 +48,6 @@ public class gamemanager : MonoBehaviour
         canDamage = true;
         state3 = gamestate3.none;
         magicManager = GetComponent<magicManager>();
-        bool canE = true;
     
     }
 

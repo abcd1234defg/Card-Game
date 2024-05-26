@@ -1181,6 +1181,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   ATK: 0
   single: 
+  cardName: 
 --- !u!212 &502530250
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3866,7 +3867,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEmpty: 0
-  a: 0
   gamemanager: {fileID: 894722934}
   cardChoice: 0
   fireCard: {fileID: 6985899243443472761, guid: 21f1224b7b64d8c438f1d4bb97ebaed6, type: 3}
@@ -4037,6 +4037,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   ATK: 0
   single: 
+  cardName: 
 --- !u!212 &1417532725
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4332,6 +4333,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   ATK: 0
   single: 
+  cardName: 
 --- !u!212 &1572380667
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4633,7 +4635,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1716599556
 SpriteRenderer:
   m_ObjectHideFlags: 0

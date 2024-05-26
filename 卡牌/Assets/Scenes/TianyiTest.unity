@@ -487,6 +487,7 @@ MonoBehaviour:
   Num: {fileID: 0}
   number: {fileID: 0}
   ATK: 1
+  anim: {fileID: 0}
 --- !u!1 &273211556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,6 +1117,7 @@ MonoBehaviour:
   ATK: 0
   single: 
   cardName: 
+  anim: {fileID: 2627986908400220782, guid: 994dc9376ff6bbe4e846d2030af06bf6, type: 3}
 --- !u!114 &429586191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1326,6 +1328,7 @@ MonoBehaviour:
   ATK: 0
   single: 
   cardName: 
+  anim: {fileID: 0}
 --- !u!212 &502530250
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1873,6 +1876,7 @@ MonoBehaviour:
   Num: {fileID: 0}
   number: {fileID: 0}
   ATK: 1
+  anim: {fileID: 0}
 --- !u!1 &597237767
 GameObject:
   m_ObjectHideFlags: 0
@@ -2258,6 +2262,7 @@ MonoBehaviour:
   ATK: 0
   single: 
   cardName: 
+  anim: {fileID: 2627986908400220782, guid: 994dc9376ff6bbe4e846d2030af06bf6, type: 3}
 --- !u!114 &721365707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2608,6 +2613,7 @@ MonoBehaviour:
   Num: {fileID: 0}
   number: {fileID: 0}
   ATK: 1
+  anim: {fileID: 0}
 --- !u!1 &838419131
 GameObject:
   m_ObjectHideFlags: 0
@@ -3599,6 +3605,7 @@ MonoBehaviour:
   Num: {fileID: 0}
   number: {fileID: 0}
   ATK: 0
+  anim: {fileID: 277218982978389741, guid: 2315c00e82e810f4886fa1a40b2d12a5, type: 3}
 --- !u!114 &1210091601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3697,6 +3704,7 @@ MonoBehaviour:
   Num: {fileID: 0}
   number: {fileID: 0}
   ATK: 0
+  anim: {fileID: 277218982978389741, guid: 2315c00e82e810f4886fa1a40b2d12a5, type: 3}
 --- !u!114 &1210412660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4498,6 +4506,7 @@ MonoBehaviour:
   ATK: 0
   single: 
   cardName: 
+  anim: {fileID: 0}
 --- !u!212 &1417532725
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4776,6 +4785,7 @@ MonoBehaviour:
   ATK: 0
   single: 
   cardName: 
+  anim: {fileID: 0}
 --- !u!212 &1572380667
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5124,6 +5134,7 @@ MonoBehaviour:
   ATK: 0
   single: 
   cardName: 
+  anim: {fileID: 2627986908400220782, guid: 994dc9376ff6bbe4e846d2030af06bf6, type: 3}
 --- !u!114 &1614424012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5729,6 +5740,7 @@ MonoBehaviour:
   Num: {fileID: 0}
   number: {fileID: 0}
   ATK: 0
+  anim: {fileID: 277218982978389741, guid: 2315c00e82e810f4886fa1a40b2d12a5, type: 3}
 --- !u!114 &1993093780
 MonoBehaviour:
   m_ObjectHideFlags: 0

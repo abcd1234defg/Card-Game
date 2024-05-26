@@ -57,7 +57,7 @@ public class enemy : MonoBehaviour
                 canA = true;
             }
         }
-        if (gamemanager.state == gamemanager.gamestate.chain1 || gamemanager.state == gamemanager.gamestate.chain2)
+        if (gamemanager.state == gamemanager.gamestate.end)
         {
             Destroy(theA);
             canA = false;

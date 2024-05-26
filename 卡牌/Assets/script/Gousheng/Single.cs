@@ -91,8 +91,11 @@ public class Single : MonoBehaviour
             GM.GetComponent<gamemanager>().enemylife -= 2;
         }
         //火球术效果
-        if (single == "FireBall(Clone)") { print("FireBall"); }
-
+        if (single == "FireBall(Clone)")
+        {
+            print("FireBall");
+            GM.GetComponent<chain>().eBurn += 1;
+        }
 
     }
 }

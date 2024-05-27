@@ -35,7 +35,7 @@ RectTransform:
   m_Children:
   - {fileID: 4231688371931175142}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -97,6 +97,7 @@ MonoBehaviour:
   a: 0
   isChoose: 0
   thisButton: {fileID: 994724186050069789}
+  information: 
 --- !u!212 &431102683814418288
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -160,13 +161,11 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1001 &2527148807177411468
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 8203473870043582908}
     m_Modifications:
     - target: {fileID: 975132494767675087, guid: a79fc0c2e39a8cb40b95933e79f15da4, type: 3}
@@ -191,7 +190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1849790136100275050, guid: a79fc0c2e39a8cb40b95933e79f15da4, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1849790136100275050, guid: a79fc0c2e39a8cb40b95933e79f15da4, type: 3}
       propertyPath: m_AnchorMax.x
@@ -251,7 +250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1849790136100275050, guid: a79fc0c2e39a8cb40b95933e79f15da4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -89.8
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 1849790136100275050, guid: a79fc0c2e39a8cb40b95933e79f15da4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -269,10 +268,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: clickMagic
       objectReference: {fileID: 0}
+    - target: {fileID: 3377633831927258769, guid: a79fc0c2e39a8cb40b95933e79f15da4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a79fc0c2e39a8cb40b95933e79f15da4, type: 3}
 --- !u!1 &994724186050069789 stripped
 GameObject:

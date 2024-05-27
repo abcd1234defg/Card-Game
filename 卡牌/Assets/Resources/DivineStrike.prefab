@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7993397361242566570}
   m_Layer: 5
   m_Name: DivineStrike
-  m_TagString: fire
+  m_TagString: water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ RectTransform:
   - {fileID: 222068331246615971}
   - {fileID: 495178096035161647}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -184,7 +184,6 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!114 &7993397361242566570
 MonoBehaviour:
   m_ObjectHideFlags: 0

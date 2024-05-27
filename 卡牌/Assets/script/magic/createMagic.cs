@@ -77,7 +77,8 @@ public class createMagic : MonoBehaviour
             cardObject = Instantiate(prefab, transform);
             cardObject.GetComponent<magicCard>().information = selectedCard;
             LeftCardlist.Remove(selectedCard);
-            
+            existNum++;
+
         }
     }
     /*choice = Random.Range(1, 8);

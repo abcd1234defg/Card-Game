@@ -97,6 +97,7 @@ MonoBehaviour:
   a: 0
   isChoose: 0
   thisButton: {fileID: 994724186050069789}
+  information: 
 --- !u!212 &431102683814418288
 SpriteRenderer:
   m_ObjectHideFlags: 0

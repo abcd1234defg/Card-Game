@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 823998347fc339c4c87ac2864d41ea6f, type: 2}
-  m_sharedMaterial: {fileID: -1822523479428720264, guid: 823998347fc339c4c87ac2864d41ea6f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -150,9 +150,9 @@ GameObject:
   - component: {fileID: 53679229973937269}
   - component: {fileID: 4204536246130156178}
   - component: {fileID: -1509179049599221997}
-  - component: {fileID: 4529400077759244802}
+  - component: {fileID: -358360773392222761}
   m_Layer: 5
-  m_Name: Slash
+  m_Name: Slash 1
   m_TagString: fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,7 @@ RectTransform:
   - {fileID: 192299644409411424}
   - {fileID: 1260040087337991065}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -320,7 +320,7 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
---- !u!114 &4529400077759244802
+--- !u!114 &-358360773392222761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -4412,6 +4412,8 @@ MonoBehaviour:
   existNum: 0
   drawNum: 0
   draw: 0
+  Database: {fileID: 4900000, guid: 328cb8401e70ba84181ae2a1fe9e3af4, type: 3}
+  LeftCardlist: []
 --- !u!1 &1267970440
 GameObject:
   m_ObjectHideFlags: 0

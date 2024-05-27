@@ -18,7 +18,9 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     private Color color;
     public GameObject thisButton;
     GameObject creater;
+    createMagic createMagic;
     bool draw;//true表示这张牌会被弃掉
+    public string information;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,7 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
         spriteRenderer = GetComponent<SpriteRenderer>();
         color = GetComponent<Image>().color;
         creater = GameObject.Find("magic card area");
+        createMagic = creater.GetComponent<createMagic>();
         thisButton.SetActive(false);
     }
 
@@ -43,6 +46,7 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
                 isChoose = false;
                 GetComponent<Image>().color = color;
                 Destroy(gameObject);
+                createMagic.LeftCardlist.Add(information);
             }
             if (isChoose == true)
             {
@@ -88,6 +92,7 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
                 gamemanager.magicNum--;
                 GetComponent<Image>().color = color;
                 magicManager.canGoOn = true;
+                createMagic.LeftCardlist.Add(information);
                 Destroy(gameObject);
                 creater.GetComponent<createMagic>().existNum--;
             }

@@ -307,7 +307,7 @@ public class gamemanager : MonoBehaviour
             }
             if (grass == 3)
             {
-                chainText.text = "chain effect: remove all marks on the field, decrease enemy 1 life per turn";
+                chainText.text = "chain effect: remove all marks on the field, decrease enemy 1 life per mark";
                 image.GetComponent<Image>().color = color;
             }
             if (fire == 2)

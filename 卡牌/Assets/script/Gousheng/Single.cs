@@ -29,11 +29,7 @@ public class Single : MonoBehaviour
         if (PL.theColor !=null && PL.theColor != "1")
         {
             TextAtk.text = ATK.ToString();
-        }
-        else
-        
-
-
+        }        
         if (GM.GetComponent<gamemanager>().state == gamemanager.gamestate.beforeStart) { TextAtk.text = " "; }
         if (GM.GetComponent<gamemanager>().state ==gamemanager.gamestate.start)
         {

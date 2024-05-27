@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class enemy : MonoBehaviour
 {
@@ -13,22 +14,48 @@ public class enemy : MonoBehaviour
     public number number;
     public int ATK;
     public GameObject anim;
-    bool canA;
+    bool canA,atkcheck;
     GameObject theA;
+    public TextMeshProUGUI TextAtk;
     // Start is called before the first frame update
     void Start()
     {
         canGoOn = true;
+        atkcheck = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gamemanager.state == gamemanager.gamestate.beforeStart)
+        if (color == null)
         {
-            ATK = 1;
+            TextAtk.text = " ";
         }
-        if(gamemanager.state == gamemanager.gamestate.playing)
+        if (color != null &&color != "1")
+        {
+            TextAtk.text = ATK.ToString();
+        }
+        if (gamemanager.GetComponent<gamemanager>().state == gamemanager.gamestate.beforeStart) { TextAtk.text = " "; }
+
+
+        if (gamemanager.state!= gamemanager.gamestate.beforeStart && atkcheck == false) { atkcheck = true; }
+        if (gamemanager.state == gamemanager.gamestate.beforeStart&&atkcheck==true)
+        {
+            float randomValue = Random.value;
+
+            // 根据概率分配攻击力
+            if (randomValue < 2f / 3f) // 2/3 的概率
+            {
+                ATK = 1;
+                atkcheck = false;
+            }
+            else // 剩余的 1/3 概率
+            {
+                ATK = 2;
+                atkcheck = false;
+            }
+        }
+        if (gamemanager.state == gamemanager.gamestate.playing)
         {
             if (gameObject.name == ("enemy1"))
             {

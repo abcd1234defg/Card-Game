@@ -15,10 +15,9 @@ GameObject:
   - component: {fileID: 4881542177761412007}
   - component: {fileID: 3877235076229750732}
   - component: {fileID: 1916157644406577986}
-  - component: {fileID: 7993397361242566570}
   m_Layer: 5
   m_Name: DivineStrike
-  m_TagString: fire
+  m_TagString: water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +37,7 @@ RectTransform:
   - {fileID: 222068331246615971}
   - {fileID: 495178096035161647}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -185,26 +184,6 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
---- !u!114 &7993397361242566570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799046115710692682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc287e497044ab1428bd3baa20a99b8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CardInformation: {fileID: 4900000, guid: e0b578ab594ce7746a103650ff0e4387, type: 3}
-  info: {fileID: 0}
-  my: {fileID: 0}
-  eneimg: {fileID: 0}
-  infotext: {fileID: 0}
-  F: {fileID: 21300000, guid: 0628e9a962dd61548afda021875c73e5, type: 3}
-  G: {fileID: 21300000, guid: bf17c6c896405fa4c98fd5972b044de6, type: 3}
-  W: {fileID: 21300000, guid: 28c843819eef1644ca90c6f4838801d9, type: 3}
 --- !u!1 &5128677643572105714
 GameObject:
   m_ObjectHideFlags: 0

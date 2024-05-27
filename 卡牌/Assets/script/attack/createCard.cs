@@ -20,7 +20,6 @@ public class createCard : MonoBehaviour
     public List<string> LeftCardlist = new List<string>();
     List<GameObject> Handcard = new List<GameObject>();
     string[] Carddata;
-
     // Start is called before the first frame update
     void Start()
     {

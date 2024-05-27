@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
@@ -18,8 +19,7 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     private Color color;
     public TextMeshProUGUI text;
     createCard createCard;
-    SpriteRenderer spriteRenderer;
-    
+    public string imformation;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,27 +32,33 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         position = GameObject.Find("attack card area");
         createCard = position.GetComponent<createCard>();
         color = GetComponent<Image>().color;
+        text=transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         text.text = null;
         
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        
+ 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gamemanager.state == gamemanager.gamestate.start)//回合弃牌阶段，把选中的手卡丢弃
+        if (gamemanager.state == gamemanager.gamestate.start)
         {
             if (isDraw == true)
             {
-                print("asd");
+                createCard.remake = false;
                 Destroy(gameObject);
+                createCard.LeftCardlist.Add(imformation);
+                print("asd");
+                
             }
         }
-        if (gamemanager.state == gamemanager.gamestate.playing)//回合出牌阶段的出牌将选中的牌删除
+        if (gamemanager.state == gamemanager.gamestate.playing)
         {
             if (isChoose == true)
             {
                 Destroy(gameObject);
+                createCard.LeftCardlist.Add(imformation);
             }
 
         }
@@ -63,6 +69,8 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         {
             player1.GetComponent<player>().theColor = gameObject.tag.ToString();
             card = player1;
+            string[] cn = gameObject.name.ToString().Split('(');
+            card.GetComponent<player>().cardName = cn[0];
             if(player2.GetComponent<player>().theColor == "1")
             {
                 player2.GetComponent<player>().theColor = null;
@@ -73,6 +81,8 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         {
             player2.GetComponent<player>().theColor = gameObject.tag.ToString();
             card = player2;
+            string[] cn = gameObject.name.ToString().Split('(');
+            card.GetComponent<player>().cardName = cn[0];
             if (player3.GetComponent<player>().theColor == "1")
             {
                 player3.GetComponent<player>().theColor = null;
@@ -83,6 +93,8 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         {
             player3.GetComponent<player>().theColor = gameObject.tag.ToString();
             card = player3;
+            string[] cn = gameObject.name.ToString().Split('(');
+            card.GetComponent<player>().cardName = cn[0];
             text.text = ("3");
         }
 
@@ -92,7 +104,8 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     {
         if(card != null)
         {
-            card.GetComponent<SpriteRenderer>().color = Color.white;
+            card.GetComponent<Image>().color = new Vector4(1, 1,1,0);
+            card.GetComponent<Image>().sprite = null;
             card.GetComponent<player>().theColor = null;
             card = null;
             text.text = null;
@@ -102,63 +115,69 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     {
         if (gamemanager.state == gamemanager.gamestate.beforeStart)//弃牌阶段
         {
-            if (choose == false)
+            if (eventData.button == PointerEventData.InputButton.Left)
             {
-                if (gamemanager.drawCard < 3)
+                if (choose == false)
                 {
-                    createCard.createNumber++;
-                    isDraw = true;
-                    print("color change");
-                    color.a = 0.5f;
-                    GetComponent<Image>().color = color;
-                    gamemanager.drawCard++;
-                    choose = true;
+                    if (gamemanager.drawCard < 3)
+                    {
+                        createCard.createNumber++;
+                        isDraw = true;
+                        print("color change");
+                        color.a = 0.5f;
+                        GetComponent<Image>().color = color;
+                        gamemanager.drawCard++;
+                        choose = true;
+                    }
                 }
-            }
-            else if (choose == true)
-            {
-                if (gamemanager.drawCard > 0)
+                else if (choose == true)
                 {
-                    createCard.createNumber--;
-                    color.a = 1f;
-                    GetComponent<Image>().color = color;
-                    gamemanager.drawCard--;
-                    isDraw = false;
-                    choose = false;
+                    if (gamemanager.drawCard > 0)
+                    {
+                        createCard.createNumber--;
+                        color.a = 1f;
+                        GetComponent<Image>().color = color;
+                        gamemanager.drawCard--;
+                        isDraw = false;
+                        choose = false;
+                    }
                 }
             }
         }
 
         if (gamemanager.state == gamemanager.gamestate.start)//出牌阶段
         {
-            if (isChoose == false)//出牌
+            if (eventData.button == PointerEventData.InputButton.Left)
             {
-                if(gamemanager.canStart == false)
+                if (isChoose == false)//出牌
                 {
-                    createCard.createNumber++;
-                    playerChoice();
-                    if (this.gameObject.tag == "fire")
+                    if (gamemanager.canStart == false)
                     {
-                       
-                            gamemanager.fire++;
-                    }
+                        createCard.createNumber++;
+                        playerChoice();
+                        if (this.gameObject.tag == "fire")
+                        {
 
-                    if (gameObject.tag == "water")
-                    {
-                        
+                            gamemanager.fire++;
+                        }
+
+                        if (gameObject.tag == "water")
+                        {
+
                             gamemanager.water++;
 
-                        
-                    }
 
-                    if (gameObject.tag == "grass")
-                    {
-                       
+                        }
+
+                        if (gameObject.tag == "grass")
+                        {
+
                             gamemanager.grass++;
 
-                        
+
+                        }
+                        isChoose = true;
                     }
-                    isChoose = true;
                 }
             }
             else if (isChoose == true)//再次点击该牌取消出牌
@@ -187,13 +206,11 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     public void OnPointerExit(PointerEventData eventData)
     {
         transform.localScale = new Vector3(1, 1);
-        spriteRenderer.sortingOrder = 0;
-
-
+        GetComponent<SortingGroup>().sortingOrder = 0;
     }
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        transform.localScale = new Vector3(1.5f, 1.5f);
-        spriteRenderer.sortingOrder = 1;
+        transform.localScale = new Vector3(1.3f, 1.3f);
+        GetComponent<SortingGroup>().sortingOrder = 1;
     }
 }

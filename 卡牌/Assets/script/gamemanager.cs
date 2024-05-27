@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gamemanager : MonoBehaviour
 {
-    public enum gamestate { beforeStart, start,playing,singlePhase, end}//分别对应弃牌，出牌，单卡结算，处理阶段，结算四个阶段
+    public enum gamestate { beforeStart, start, playing, singlePhase,animation,chain1, chain2, end, gameover}//分别对应弃牌，出牌，对方出牌，结算四个阶段
     public enum gamestate2 { win, lose, draw}//每局的胜负
-    public enum gamestate3 { magicStart, magicEnd, none }//魔法卡的阶段
+    public enum gamestate3 { magicStart, magicEnd, none }
     public gamestate state;
     public gamestate2 state2;
     public gamestate3 state3;
@@ -18,8 +20,8 @@ public class gamemanager : MonoBehaviour
     public int win, lose;//跟敌人对比时赢和输的次数
     public TextMesh text;
     public int drawCard;//弃牌的数量
-    public int enemylife = 10, playerlife = 10;//玩家和敌人的血量
-    public int playerDamage, enemyDamage;//玩家和敌人会造成的伤害
+    public int enemylife = 20, playerlife = 10;
+    public int playerDamage, enemyDamage;
     public int magicNum;
     bool canDamage;
     public TextMesh e1, e2, e3;
@@ -27,6 +29,14 @@ public class gamemanager : MonoBehaviour
     int[] odd = {1, 3, 5, 7, 9, 11};
     int[] even = { 2, 4, 6, 8, 10, 12 };
     public bool canO, canE;
+    public int beiLv;//双方的伤害的倍率
+    public int f,w,g;
+    string over;//游戏结束告知输赢
+    public bool canOver;
+    public TextMeshProUGUI winOrLose;
+    public TextMeshProUGUI chainText;
+    GameObject image;
+    Color color;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,12 +48,13 @@ public class gamemanager : MonoBehaviour
         enemy3 = GameObject.Find("enemy3");
         Application.targetFrameRate = 60;
         state = gamestate.beforeStart;
-        enemylife = 10; playerlife = 10;
+        enemylife = 20; playerlife = 10;
         canDamage = true;
         state3 = gamestate3.none;
         magicManager = GetComponent<magicManager>();
-        bool canE = true;
-    
+        Application.targetFrameRate = 60;
+        image = GameObject.Find("Image");
+        color = image.GetComponent<Image>().color;
     }
 
     // Update is called once per frame
@@ -52,6 +63,11 @@ public class gamemanager : MonoBehaviour
         e1.text = number1.ToString();
         e2.text = number2.ToString();
         e3.text = number3.ToString();
+        if(state == gamestate.beforeStart)
+        {
+            beiLv = 1;
+            image.GetComponent<Image>().color = Vector4.zero;
+        }
         if (state == gamestate.start)
         {
             if ((fire + water + grass == 3) && magicNum == 0)//玩家把三张牌选满
@@ -61,16 +77,22 @@ public class gamemanager : MonoBehaviour
             else
                 canStart = false;
             canDamage = true;
+            chainT();
+            
+        }
+        if(state3 == gamestate3.magicEnd)
+        {
+            f = w = g = 0;
         }
         if(state == gamestate.playing)
         {
+            chainText.text = null;
+            image.GetComponent<Image>().color = Vector4.zero;
             pDamage();
-            eDamage();
-     
+            eDamage();  
         }
         if(state == gamestate.end)
         {
-            
           if(win > lose)
             {
                 state2 = gamestate2.win;
@@ -84,7 +106,7 @@ public class gamemanager : MonoBehaviour
           if(win == lose)
             {
                 state2 = gamestate2.draw;
-                if(fire == 3 || water == 3 || grass == 3)
+                /*if(fire == 3 || water == 3 || grass == 3)
                 {
                     if(enemyFire == enemyGrass && enemyWater == enemyGrass)
                     {
@@ -97,19 +119,19 @@ public class gamemanager : MonoBehaviour
                     {
                         state2 = gamestate2.lose;
                     }
-                }
+                }*/
             }
           if(canDamage == true)
             {
                 if (state2 == gamestate2.win)
                 {
-                    enemylife -= playerDamage;
+                    enemylife -= (playerDamage * beiLv);
                     canDamage = false;
                     print("asdad");
                 }
                 if (state2 == gamestate2.lose)
                 {
-                    playerlife -= enemyDamage;
+                    playerlife -= (enemyDamage * beiLv);
                     canDamage = false;
                 }
                 if (state2 == gamestate2.draw)
@@ -140,6 +162,26 @@ public class gamemanager : MonoBehaviour
             canDamage = false;
         }
         text.text = state.ToString();
+        //////////////////////////////////////////////////////////////////////////////////////
+        if(state != gamestate.gameover)
+        {
+            if(playerlife <= 0)
+            {
+                canOver = true;
+                over = "you lose";
+                state = gamestate.gameover;
+            }
+            if (enemylife <= 0)
+            {
+                canOver = true;
+                over = "you win";
+                state = gamestate.gameover;
+            }
+        }
+        if(state == gamestate.gameover)
+        {
+            winOrLose.text = over;
+        }
     }
     public void enemy()//骰三个十二面骰
     {
@@ -184,54 +226,107 @@ public class gamemanager : MonoBehaviour
     {
         if (fire == 2)
         {
-            playerDamage = player1.GetComponent<player>().ATK + player2.GetComponent<player>().ATK + player3.GetComponent<player>().ATK + 1;
+            playerDamage = player1.GetComponent<Single>().ATK + player2.GetComponent<Single>().ATK + player3.GetComponent<Single>().ATK + 1;
         }
         if (fire == 3)
         {
-            playerDamage = player1.GetComponent<player>().ATK + player2.GetComponent<player>().ATK + player3.GetComponent<player>().ATK + 3;
+            playerDamage = player1.GetComponent<Single>().ATK + player2.GetComponent<Single>().ATK + player3.GetComponent<Single>().ATK + 3;
         }
-        if (water == 2)
+        if (water == 2 || water == 3 || grass == 2 || grass == 3)
         {
-            playerDamage = player1.GetComponent<player>().ATK + player2.GetComponent<player>().ATK + player3.GetComponent<player>().ATK;
-        }
-        if (water == 3)
-        {
-            playerDamage = player1.GetComponent<player>().ATK + player2.GetComponent<player>().ATK + player3.GetComponent<player>().ATK;
-        }
-        if (grass ==2)
-        {
-            playerDamage = player1.GetComponent<player>().ATK + player2.GetComponent<player>().ATK + player3.GetComponent<player>().ATK;
-        }
-        if (grass == 3)
-        {
-            playerDamage = player1.GetComponent<player>().ATK + player2.GetComponent<player>().ATK + player3.GetComponent<player>().ATK;
+            playerDamage = player1.GetComponent<Single>().ATK + player2.GetComponent<Single>().ATK + player3.GetComponent<Single>().ATK;
         }
     }
     public void eDamage()
     {
         if (enemyFire == 2)
         {
-            enemyDamage = enemy1.GetComponent<enemy>().ATK+ enemy2.GetComponent<enemy>().ATK+ enemy3.GetComponent<enemy>().ATK + 1;
+            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK + 1;
         }
         if (enemyFire == 3)
         {
             enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK + 3;
         }
-        if (enemyWater == 2)
+        if (enemyWater == 2 || enemyWater == 3 || enemyGrass == 2 || enemyGrass == 3)
         {
             enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
         }
-        if (enemyWater == 3)
+    }
+
+    void chainT()
+    {
+        if(state3 == gamestate3.magicStart)
         {
-            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
+            image.GetComponent<Image>().color = color;
+            if(magicManager.canSwap)
+            {
+                chainText.text = "transform.position: swap two enemy's position";
+            }
+            if(magicManager.canTransF)
+            {
+                chainText.text = "polymorph.minotaur: turn an enemy into minotaur";
+            }
+            if (magicManager.canTransW)
+            {
+                chainText.text = "polymorph.slime: turn an enemy into slime";
+            }
+            if (magicManager.canTransG)
+            {
+                chainText.text = "polymorph.goblin: turn an enemy into goblin";
+            }
+            if (magicManager.canOdd)
+            {
+                chainText.text = "odd dice: your enemy can only roll out odd number";
+            }
+            if (magicManager.canEven)
+            {
+                chainText.text = "even dice: your enemy can only roll out even number";
+            }
+            if (magicManager.canDouble)
+            {
+                chainText.text = "strange potion: double your damage and enemy's damage this turn";
+            }
+
         }
-        if (enemyGrass == 2)
+        else
         {
-            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
+            if (water == 2)
+            {
+                chainText.text = "chain effect: give you 2 shield mark, decrease enemy 1 damage per mark";
+                image.GetComponent<Image>().color = color;
+            }
+            if (water == 3)
+            {
+                chainText.text = "chain effect: give you a heal mark, increase 1 life per turn";
+                image.GetComponent<Image>().color = color;
+            }
+            if (grass == 2)
+            {
+                chainText.text = "chain effect: give enemy a burn mark, decrease 1 life per turn";
+                image.GetComponent<Image>().color = color;
+            }
+            if (grass == 3)
+            {
+                chainText.text = "chain effect: remove all marks on the field, decrease enemy 1 life per mark";
+                image.GetComponent<Image>().color = color;
+            }
+            if (fire == 2)
+            {
+                chainText.text = "chain effect: increase 1 damage";
+                image.GetComponent<Image>().color = color;
+            }
+            if (fire == 3)
+            {
+                chainText.text = "chain effect: increase 3 damage";
+                image.GetComponent<Image>().color = color;
+            }
+            if (fire <= 1 && water <= 1 && grass <= 1)
+            {
+                chainText.text = null;
+                image.GetComponent<Image>().color = Vector4.zero;
+            }
+
         }
-        if (enemyGrass == 3)
-        {
-            enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
-        }
+
     }
 }

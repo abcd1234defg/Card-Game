@@ -9,8 +9,8 @@ TagManager:
   - grass
   - mouse
   - number
-  - Enemylife
   - Playerlife
+  - Enemylife
   layers:
   - Default
   - TransparentFX
@@ -18,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - WInLose
   - 
   - 
   - 

@@ -14,10 +14,11 @@ public class number : MonoBehaviour
     public GameObject manager;
     public magicManager magicManager;
     public GameObject shadow, theShadow;
-
+    bool canPlus = true;
     // Start is called before the first frame update
     void Start()
     {
+        
         nums = gameObject.name.ToString();//用来看自己是啥数字
         num = int.Parse(nums);//根据自己是啥数字去生成初始的颜色
         if(num < 5)
@@ -58,6 +59,31 @@ public class number : MonoBehaviour
         if(gamemanager.state3 == gamemanager.gamestate3.none)
         {
             theShadow.SetActive(false);
+        }
+        if(gamemanager.state3 == gamemanager.gamestate3.magicStart)
+        {
+            while(canPlus == true)
+            {
+                if(theColor == blockColor.fire)
+                {
+                    gamemanager.f++;
+                    canPlus = false;
+                }
+                if (theColor == blockColor.water)
+                {
+                    gamemanager.w++;
+                    canPlus = false;
+                }
+                if (theColor == blockColor.grass)
+                {
+                    gamemanager.g++;
+                    canPlus = false;
+                }
+            }
+        }
+        if(gamemanager.state3 == gamemanager.gamestate3.magicEnd)
+        {
+            canPlus = true;
         }
     }
     private void OnMouseDown()

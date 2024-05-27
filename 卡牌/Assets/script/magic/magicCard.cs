@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
 
 public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -17,6 +18,9 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     private Color color;
     public GameObject thisButton;
     GameObject creater;
+    createMagic createMagic;
+    bool draw;//true表示这张牌会被弃掉
+    public string information;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,15 +31,23 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
         spriteRenderer = GetComponent<SpriteRenderer>();
         color = GetComponent<Image>().color;
         creater = GameObject.Find("magic card area");
+        createMagic = creater.GetComponent<createMagic>();
         thisButton.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //print("a=" + a);
+        
         if(gamemanager.state == gamemanager.gamestate.start)
         {
+            if(draw)
+            {
+                isChoose = false;
+                GetComponent<Image>().color = color;
+                Destroy(gameObject);
+                createMagic.LeftCardlist.Add(information);
+            }
             if (isChoose == true)
             {
                 if(gameObject.name == "swapPosition(Clone)")
@@ -66,6 +78,10 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
                 {
                     magicManager.canEven = true;
                 }
+                if(gameObject.name == "doubleDamage(Clone)")
+                {
+                    magicManager.canDouble = true;
+                }
             }
         }
         if (gamemanager.state3 == gamemanager.gamestate3.magicEnd)
@@ -76,6 +92,7 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
                 gamemanager.magicNum--;
                 GetComponent<Image>().color = color;
                 magicManager.canGoOn = true;
+                createMagic.LeftCardlist.Add(information);
                 Destroy(gameObject);
                 creater.GetComponent<createMagic>().existNum--;
             }
@@ -85,7 +102,28 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
   
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(gamemanager.state == gamemanager.gamestate.start)
+        if(gamemanager.state == gamemanager.gamestate.beforeStart)//弃牌阶段弃牌
+        {
+            if(isChoose == false)
+            {
+                isChoose = true;
+                creater.GetComponent<createMagic>().draw = true;
+                creater.GetComponent<createMagic>().existNum--;
+                creater.GetComponent<createMagic>().drawNum++;
+                GetComponent<Image>().color = new Vector4(1, 1, 1, 0.6f);
+                draw = true;
+            }
+            else if(isChoose == true)
+            {
+                isChoose = false;
+                creater.GetComponent<createMagic>().draw = false;
+                creater.GetComponent<createMagic>().existNum++;
+                creater.GetComponent<createMagic>().drawNum--;
+                GetComponent<Image>().color = new Vector4(1, 1, 1, 1f);
+                draw = false;
+            }
+        }
+        if(gamemanager.state == gamemanager.gamestate.start)//出牌阶段出牌
         {
             if(gamemanager.state3 == gamemanager.gamestate3.none)
             {
@@ -120,15 +158,15 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
          transform.localScale = new Vector3(1, 1);
         spriteRenderer.sortingOrder = 0;
         Debug.Log("under");
-
+        GetComponent<SortingGroup>().sortingOrder = 0;
 
     }
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-         transform.localScale = new Vector3(1.5f, 1.5f);
+         transform.localScale = new Vector3(1.3f, 1.3f);
         spriteRenderer.sortingOrder = 1;
         Debug.Log("above");
-        
+        GetComponent<SortingGroup>().sortingOrder = 1;
 
     }
     public void clickB()

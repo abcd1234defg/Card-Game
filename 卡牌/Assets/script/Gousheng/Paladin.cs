@@ -11,10 +11,11 @@ public class Paladin : MonoBehaviour
     void Start()
     {
         rare = Random.Range(1, 11);
-        if (rare <= 5) { Single = "Crush"; }//当出生点数是5以下时，生成“锤击”
-        if (rare > 5 && rare < 8) { Single = "ShieldAttack"; }//当出生点数是6和7时，生成“盾击”
-        if (rare > 7 && rare < 10) { Single = "LayOnHand"; }//当出生点数是8和9时，生成“圣疗”
-        if (rare == 10) { Single = "DivineStrike"; }//当出生点数是10时，生成“神圣打击”
+        Single = gameObject.name;
+        //if (rare <= 5) { Single = "Crush"; }//当出生点数是5以下时，生成“锤击”
+        //if (rare > 5 && rare < 8) { Single = "ShieldAttack"; }//当出生点数是6和7时，生成“盾击”
+        //if (rare > 7 && rare < 10) { Single = "LayOnHand"; }//当出生点数是8和9时，生成“圣疗”
+        //if (rare == 10) { Single = "DivineStrike"; }//当出生点数是10时，生成“神圣打击”
         Cardeffect();
         attackCard = GetComponent<attackCard>();
     }
@@ -31,9 +32,9 @@ public class Paladin : MonoBehaviour
 
     void Cardeffect()
     {
-        if (Single == "Crush") { ATK = 1; }
-        if (Single == "ShieldAttack") { ATK = 2; }
-        if (Single == "LayOnHand") { ATK = 0; }
-        if (Single == "DivineStrike") { ATK = 2; }
+        if (Single == "SlashH(Clone)") { ATK = 1; }
+        if (Single == "ShieldAttack(Clone)") { ATK = 2; }
+        if (Single == "LayOnHand(Clone)") { ATK = 0; }
+        if (Single == "DivineStrike(Clone)") { ATK = 2; }
     }
 }

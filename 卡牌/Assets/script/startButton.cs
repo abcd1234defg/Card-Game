@@ -3,22 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class startButton : MonoBehaviour
 {
     public gamemanager gamemanager;
     public GameObject creater;
+    public GameObject manager;
+    chain chain;
+    float sTime, aTime = 1;
     // Start is called before the first frame update
     void Start()
     {
-        
+        chain = manager.GetComponent<chain>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(gamemanager.state == gamemanager.gamestate.beforeStart)
+        {
+            sTime = 1;
+            aTime = 2;
+        }
+        if (gamemanager.state == gamemanager.gamestate.singlePhase)
+        {
+            sTime -= Time.deltaTime;
+            if(sTime <= 0)
+            {
+                gamemanager.state = gamemanager.gamestate.animation;
+            }
+            
+        }
+        if (gamemanager.state == gamemanager.gamestate.animation)
+        {
+            aTime -= Time.deltaTime;
+            if(aTime <= 0)
+            {
+                if (gamemanager.grass == 3 || gamemanager.enemyGrass == 3)
+                {
+                    gamemanager.state = gamemanager.gamestate.chain1;//三草进一个state
+                }
+                else
+                    gamemanager.state = gamemanager.gamestate.chain2;//二水进一个state
+
+            }
+            
+        }
     }
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         if(gamemanager.state == gamemanager.gamestate.start)
         {
@@ -32,38 +64,41 @@ public class startButton : MonoBehaviour
         /////////////////////////////////////////
        
         ///////////////////////////////////////////
+        //
+
         else if(gamemanager.state == gamemanager.gamestate.playing)
         {
-            gamemanager.state = gamemanager.gamestate.singlePhase;
+                gamemanager.state = gamemanager.gamestate.singlePhase;
         }
-        else if (gamemanager.state == gamemanager.gamestate.singlePhase)
-        {
-            gamemanager.state = gamemanager.gamestate.end;
-        }
+       
+        
+            
+
         else if(gamemanager.state == gamemanager.gamestate.end)
         {
-            gamemanager.state=gamemanager.gamestate.beforeStart;
-            creater.GetComponent<createCard>().isEmpty = true;
-            creater.GetComponent<createCard>().remake = false;
+            if(gamemanager.canOver)
+            {
+                gamemanager.state = gamemanager.gamestate.gameover;
+            }
+            else
+            {
+                gamemanager.state = gamemanager.gamestate.beforeStart;
+                creater.GetComponent<createCard>().isEmpty = true;
+                creater.GetComponent<createCard>().remake = false;
+            }
+
         }
         else if(gamemanager.state == gamemanager.gamestate.beforeStart)
         {
             gamemanager.state = gamemanager.gamestate.start;
             creater.GetComponent<createCard>().isEmpty = true;
-            creater.GetComponent<createCard>().remake = false;
+            //creater.GetComponent<createCard>().remake = false;
 
         }
+        else if(gamemanager.state == gamemanager.gamestate.gameover)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
-    /*   gamemanager.fire = 0;
-            gamemanager.water = 0;
-            gamemanager.grass = 0;
-            gamemanager.enemyFire = 0;
-            gamemanager.enemyGrass = 0;
-            gamemanager.enemyWater = 0;
-            gamemanager.number1 = 0;
-            gamemanager.number2 = 0;
-            gamemanager.number3 = 0;
-            gamemanager.win = 0;
-            gamemanager.lose = 0;
-            gamemanager.abc = 0;*/
+
 }

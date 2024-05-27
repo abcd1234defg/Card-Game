@@ -61,23 +61,29 @@ public class createMagic : MonoBehaviour
 
     void create()
     {
-        for(int i = 0; i < createNum; i++)
+        while(transform.childCount < createNum)
         {
             int randomIndex = Random.Range(0, LeftCardlist.Count);
             string selectedCard = LeftCardlist[randomIndex];
             string cardName = selectedCard.Trim();
             if (cardName == null)
             {
-                Debug.Log($"无效的卡牌信息:" + selectedCard);
+                Debug.Log($"无效的m卡牌信息:" + selectedCard);
                 LeftCardlist.RemoveAt(randomIndex);
                 continue;
             }
             GameObject cardObject = null;
             GameObject prefab = Resources.Load<GameObject>(cardName);
+            if (prefab == null)
+            {
+                Debug.Log($"无效的m卡牌信息:" + selectedCard);
+                LeftCardlist.RemoveAt(randomIndex);
+                continue;
+            }
             cardObject = Instantiate(prefab, transform);
             cardObject.GetComponent<magicCard>().information = selectedCard;
             LeftCardlist.Remove(selectedCard);
-            
+            existNum++;
         }
     }
     /*choice = Random.Range(1, 8);

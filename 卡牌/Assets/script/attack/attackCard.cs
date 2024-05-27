@@ -115,8 +115,6 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     {
         if (gamemanager.state == gamemanager.gamestate.beforeStart)//弃牌阶段
         {
-            if (eventData.button == PointerEventData.InputButton.Left)
-            {
                 if (choose == false)
                 {
                     if (gamemanager.drawCard < 3)
@@ -142,13 +140,11 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
                         choose = false;
                     }
                 }
-            }
+            
         }
 
         if (gamemanager.state == gamemanager.gamestate.start)//出牌阶段
         {
-            if (eventData.button == PointerEventData.InputButton.Left)
-            {
                 if (isChoose == false)//出牌
                 {
                     if (gamemanager.canStart == false)
@@ -179,7 +175,6 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
                         isChoose = true;
                     }
                 }
-            }
             else if (isChoose == true)//再次点击该牌取消出牌
             {
                 createCard.createNumber--;

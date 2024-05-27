@@ -60,13 +60,14 @@ public class gamemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        e1.text = number1.ToString();
-        e2.text = number2.ToString();
-        e3.text = number3.ToString();
+    
         if(state == gamestate.beforeStart)
         {
             beiLv = 1;
             image.GetComponent<Image>().color = Vector4.zero;
+            e1.text = null;
+            e2.text = null;
+            e3.text = null;
         }
         if (state == gamestate.start)
         {
@@ -86,10 +87,14 @@ public class gamemanager : MonoBehaviour
         }
         if(state == gamestate.playing)
         {
+ 
             chainText.text = null;
             image.GetComponent<Image>().color = Vector4.zero;
             pDamage();
-            eDamage();  
+            eDamage();
+            e1.text = number1.ToString();
+            e2.text = number2.ToString();
+            e3.text = number3.ToString();
         }
         if(state == gamestate.end)
         {

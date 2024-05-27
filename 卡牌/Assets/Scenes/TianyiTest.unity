@@ -435,6 +435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 114338101}
   - component: {fileID: 114338100}
+  - component: {fileID: 114338102}
   m_Layer: 0
   m_Name: dice
   m_TagString: Untagged
@@ -509,6 +510,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114338102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114338099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869d545ef5fca214ea2e870e5555e0f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamemanager: {fileID: 894722934}
+  diceA: {fileID: 6870421884521313062, guid: 9538c98d51b023944834830a26aed939, type: 3}
 --- !u!1 &155424456
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,6 +912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 241744874}
   - component: {fileID: 241744873}
+  - component: {fileID: 241744875}
   m_Layer: 0
   m_Name: dice (2)
   m_TagString: Untagged
@@ -971,6 +987,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &241744875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241744872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869d545ef5fca214ea2e870e5555e0f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamemanager: {fileID: 894722934}
+  diceA: {fileID: 6870421884521313062, guid: 9538c98d51b023944834830a26aed939, type: 3}
 --- !u!1 &271072092
 GameObject:
   m_ObjectHideFlags: 0
@@ -7973,6 +8003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1860944555}
   - component: {fileID: 1860944554}
+  - component: {fileID: 1860944556}
   m_Layer: 0
   m_Name: dice (1)
   m_TagString: Untagged
@@ -8047,6 +8078,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1860944556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860944553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869d545ef5fca214ea2e870e5555e0f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamemanager: {fileID: 894722934}
+  diceA: {fileID: 6870421884521313062, guid: 9538c98d51b023944834830a26aed939, type: 3}
 --- !u!1 &1909383108
 GameObject:
   m_ObjectHideFlags: 0

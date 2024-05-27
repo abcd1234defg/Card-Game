@@ -10,6 +10,7 @@ public class startButton : MonoBehaviour
     public GameObject creater;
     public GameObject manager;
     chain chain;
+    float sTime, aTime = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,35 @@ public class startButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(gamemanager.state == gamemanager.gamestate.beforeStart)
+        {
+            sTime = 1;
+            aTime = 2;
+        }
+        if (gamemanager.state == gamemanager.gamestate.singlePhase)
+        {
+            sTime -= Time.deltaTime;
+            if(sTime <= 0)
+            {
+                gamemanager.state = gamemanager.gamestate.animation;
+            }
+            
+        }
+        if (gamemanager.state == gamemanager.gamestate.animation)
+        {
+            aTime -= Time.deltaTime;
+            if(aTime <= 0)
+            {
+                if (gamemanager.grass == 3 || gamemanager.enemyGrass == 3)
+                {
+                    gamemanager.state = gamemanager.gamestate.chain1;//三草进一个state
+                }
+                else
+                    gamemanager.state = gamemanager.gamestate.chain2;//二水进一个state
+
+            }
+            
+        }
     }
     private void OnMouseDown()
     {
@@ -41,15 +70,8 @@ public class startButton : MonoBehaviour
         {
                 gamemanager.state = gamemanager.gamestate.singlePhase;
         }
-        else if (gamemanager.state == gamemanager.gamestate.singlePhase)
-        {
-            if (gamemanager.grass == 3 || gamemanager.enemyGrass == 3)
-            {
-                gamemanager.state = gamemanager.gamestate.chain1;//三草进一个state
-            }
-            else
-                gamemanager.state = gamemanager.gamestate.chain2;//二水进一个state
-        }
+       
+        
             
 
         else if(gamemanager.state == gamemanager.gamestate.end)

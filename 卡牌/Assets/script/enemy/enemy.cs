@@ -12,6 +12,9 @@ public class enemy : MonoBehaviour
     public GameObject Num;//十二个数字中这张牌对应的数字
     public number number;
     public int ATK;
+    public GameObject anim;
+    bool canA;
+    GameObject theA;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,8 +44,28 @@ public class enemy : MonoBehaviour
                 enemy3();
             }
         }
-        if(gamemanager.state == gamemanager.gamestate.beforeStart)
+        if (gamemanager.state == gamemanager.gamestate.animation)
         {
+            GetComponent<Image>().color = new Vector4(1, 1, 1, 0);
+           
+            if (canA == false)
+            {
+
+                theA = Instantiate(anim, transform);
+                theA.GetComponent<Image>().sprite = GetComponent<Image>().sprite;
+                
+                canA = true;
+            }
+        }
+        if (gamemanager.state == gamemanager.gamestate.end)
+        {
+            Destroy(theA);
+            canA = false;
+            GetComponent<Image>().color = new Vector4(1, 1, 1, 1);
+        }
+        if (gamemanager.state == gamemanager.gamestate.beforeStart)
+        {
+            Destroy(theA);
             color = null;
             this.GetComponent<Image>().color = new Vector4(1,1, 1, 0);
             canGoOn = true;

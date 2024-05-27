@@ -73,8 +73,8 @@ public class Rightclick : MonoBehaviour,IPointerEnterHandler,IPointerDownHandler
 
                     if (cardName == clearname[0])
                     {
-                        infotext.text = cardDescription; // Display matching card description
-                        break; // Exit the loop after finding a match
+                        infotext.text = cardDescription; 
+                        break; 
                     }
 
                     // 假设你想在infotext上显示信息

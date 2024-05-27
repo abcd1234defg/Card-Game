@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class enemy : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class enemy : MonoBehaviour
     public GameObject anim;
     bool canA;
     GameObject theA;
+    public TextMeshProUGUI TextAtk;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,15 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (color == null)
+        {
+            TextAtk.text = " ";
+        }
+        if (color != null &&color != "1")
+        {
+            TextAtk.text = ATK.ToString();
+        }
+        if (gamemanager.GetComponent<gamemanager>().state == gamemanager.gamestate.beforeStart) { TextAtk.text = " "; }
         if (gamemanager.state == gamemanager.gamestate.beforeStart)
         {
             ATK = 1;

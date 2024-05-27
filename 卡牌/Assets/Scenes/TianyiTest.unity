@@ -2358,7 +2358,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 694373524}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3102,8 +3102,6 @@ RectTransform:
   - {fileID: 1716599557}
   - {fileID: 1169240378}
   - {fileID: 651955831}
-  - {fileID: 922270065}
-  - {fileID: 1706292898}
   - {fileID: 527284499}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -3267,7 +3265,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 922270065}
   m_Father: {fileID: 694373524}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3385,9 +3384,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a697395b1ac36d944b7274e79dcface2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Icon: {fileID: 922270066}
   GM: {fileID: 894722934}
   owner: 
   Ugui: {fileID: 770158881}
+  Win: {fileID: 21300000, guid: ed4821cdda4d7e04e9b1253826373591, type: 3}
+  Dead: {fileID: 21300000, guid: 9e03548ee1519214a944b439a1e5dccc, type: 3}
 --- !u!1 &780327961
 GameObject:
   m_ObjectHideFlags: 0
@@ -4190,17 +4192,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922270064}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 694373524}
-  m_RootOrder: 13
+  m_Father: {fileID: 770158880}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -754, y: 72}
+  m_AnchoredPosition: {x: -181, y: -8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &922270066
@@ -7173,17 +7175,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1706292897}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 694373524}
-  m_RootOrder: 14
+  m_Father: {fileID: 1911693286}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -754, y: 242}
+  m_AnchoredPosition: {x: -181, y: -14}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1706292899
@@ -7718,7 +7720,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1706292898}
   m_Father: {fileID: 694373524}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7836,9 +7839,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a697395b1ac36d944b7274e79dcface2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Icon: {fileID: 1706292899}
   GM: {fileID: 894722934}
   owner: 
   Ugui: {fileID: 1911693287}
+  Win: {fileID: 21300000, guid: 64fdcb9cc526ac040b22f5a4c6c52977, type: 3}
+  Dead: {fileID: 21300000, guid: 3b597fdd549068c4aa6d86fd23d7e9bc, type: 3}
 --- !u!1 &1959480704
 GameObject:
   m_ObjectHideFlags: 0

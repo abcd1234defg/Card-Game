@@ -50,7 +50,7 @@ public class startButton : MonoBehaviour
             
         }
     }
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         if(gamemanager.state == gamemanager.gamestate.start)
         {

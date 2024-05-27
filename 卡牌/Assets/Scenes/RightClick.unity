@@ -2847,7 +2847,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9dea506e837d3014d9f638aa52db06b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 12d9d090a63358e4b927e5a2f95fc896, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3385,9 +3385,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a697395b1ac36d944b7274e79dcface2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Icon: {fileID: 0}
   GM: {fileID: 894722934}
   owner: 
   Ugui: {fileID: 770158881}
+  Win: {fileID: 0}
+  Dead: {fileID: 0}
 --- !u!1 &780327961
 GameObject:
   m_ObjectHideFlags: 0
@@ -3998,7 +4001,7 @@ MonoBehaviour:
   g: 0
   canOver: 0
   winOrLose: {fileID: 527284497}
-  chainText: {fileID: 232038933}
+  chainText: {fileID: 0}
 --- !u!4 &894722935
 Transform:
   m_ObjectHideFlags: 0
@@ -5311,7 +5314,7 @@ MonoBehaviour:
   number: {fileID: 0}
   ATK: 0
   anim: {fileID: 277218982978389741, guid: 2315c00e82e810f4886fa1a40b2d12a5, type: 3}
-  TextAtk: {fileID: 1119025115}
+  TextAtk: {fileID: 0}
 --- !u!114 &1210091601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5412,7 +5415,7 @@ MonoBehaviour:
   number: {fileID: 0}
   ATK: 0
   anim: {fileID: 277218982978389741, guid: 2315c00e82e810f4886fa1a40b2d12a5, type: 3}
-  TextAtk: {fileID: 363605352}
+  TextAtk: {fileID: 0}
 --- !u!114 &1210412660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5650,7 +5653,7 @@ MonoBehaviour:
   existNum: 0
   drawNum: 0
   draw: 0
-  Database: {fileID: 4900000, guid: 328cb8401e70ba84181ae2a1fe9e3af4, type: 3}
+  Database: {fileID: 0}
   LeftCardlist: []
 --- !u!1 &1267970440
 GameObject:
@@ -7836,9 +7839,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a697395b1ac36d944b7274e79dcface2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Icon: {fileID: 0}
   GM: {fileID: 894722934}
   owner: 
   Ugui: {fileID: 1911693287}
+  Win: {fileID: 0}
+  Dead: {fileID: 0}
 --- !u!1 &1959480704
 GameObject:
   m_ObjectHideFlags: 0
@@ -7985,7 +7991,7 @@ MonoBehaviour:
   number: {fileID: 0}
   ATK: 0
   anim: {fileID: 277218982978389741, guid: 2315c00e82e810f4886fa1a40b2d12a5, type: 3}
-  TextAtk: {fileID: 1169000865}
+  TextAtk: {fileID: 0}
 --- !u!114 &1993093780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8446,7 +8452,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a698d72300e505844a14332e9400a8da, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2bc2e954e72f3fb4e80b8fb13453df31, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

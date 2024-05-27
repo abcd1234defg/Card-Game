@@ -2691,14 +2691,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc287e497044ab1428bd3baa20a99b8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardInformation: {fileID: 0}
+  CardInformation: {fileID: 4900000, guid: e0b578ab594ce7746a103650ff0e4387, type: 3}
   info: {fileID: 0}
   my: {fileID: 0}
   eneimg: {fileID: 0}
   infotext: {fileID: 0}
-  F: {fileID: 0}
-  G: {fileID: 0}
-  W: {fileID: 0}
+  F: {fileID: 21300000, guid: 0628e9a962dd61548afda021875c73e5, type: 3}
+  G: {fileID: 21300000, guid: bf17c6c896405fa4c98fd5972b044de6, type: 3}
+  W: {fileID: 21300000, guid: 28c843819eef1644ca90c6f4838801d9, type: 3}
 --- !u!114 &651955833
 MonoBehaviour:
   m_ObjectHideFlags: 0

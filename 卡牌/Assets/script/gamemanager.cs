@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gamemanager : MonoBehaviour
 {
@@ -33,6 +34,9 @@ public class gamemanager : MonoBehaviour
     string over;//游戏结束告知输赢
     public bool canOver;
     public TextMeshProUGUI winOrLose;
+    public TextMeshProUGUI chainText;
+    GameObject image;
+    Color color;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +52,9 @@ public class gamemanager : MonoBehaviour
         canDamage = true;
         state3 = gamestate3.none;
         magicManager = GetComponent<magicManager>();
-    
+        Application.targetFrameRate = 60;
+        image = GameObject.Find("Image");
+        color = image.GetComponent<Image>().color;
     }
 
     // Update is called once per frame
@@ -60,6 +66,7 @@ public class gamemanager : MonoBehaviour
         if(state == gamestate.beforeStart)
         {
             beiLv = 1;
+            image.GetComponent<Image>().color = Vector4.zero;
         }
         if (state == gamestate.start)
         {
@@ -70,6 +77,8 @@ public class gamemanager : MonoBehaviour
             else
                 canStart = false;
             canDamage = true;
+            chainT();
+            
         }
         if(state3 == gamestate3.magicEnd)
         {
@@ -77,6 +86,8 @@ public class gamemanager : MonoBehaviour
         }
         if(state == gamestate.playing)
         {
+            chainText.text = null;
+            image.GetComponent<Image>().color = Vector4.zero;
             pDamage();
             eDamage();  
         }
@@ -240,5 +251,82 @@ public class gamemanager : MonoBehaviour
         {
             enemyDamage = enemy1.GetComponent<enemy>().ATK + enemy2.GetComponent<enemy>().ATK + enemy3.GetComponent<enemy>().ATK;
         }
+    }
+
+    void chainT()
+    {
+        if(state3 == gamestate3.magicStart)
+        {
+            image.GetComponent<Image>().color = color;
+            if(magicManager.canSwap)
+            {
+                chainText.text = "transform.position: swap two enemy's position";
+            }
+            if(magicManager.canTransF)
+            {
+                chainText.text = "polymorph.minotaur: turn an enemy into minotaur";
+            }
+            if (magicManager.canTransW)
+            {
+                chainText.text = "polymorph.slime: turn an enemy into slime";
+            }
+            if (magicManager.canTransG)
+            {
+                chainText.text = "polymorph.goblin: turn an enemy into goblin";
+            }
+            if (magicManager.canOdd)
+            {
+                chainText.text = "odd dice: your enemy can only roll out odd number";
+            }
+            if (magicManager.canEven)
+            {
+                chainText.text = "even dice: your enemy can only roll out even number";
+            }
+            if (magicManager.canDouble)
+            {
+                chainText.text = "strange potion: double your damage and enemy's damage this turn";
+            }
+
+        }
+        else
+        {
+            if (water == 2)
+            {
+                chainText.text = "chain effect: give you 2 shield mark, decrease enemy 1 damage per mark";
+                image.GetComponent<Image>().color = color;
+            }
+            if (water == 3)
+            {
+                chainText.text = "chain effect: give you a heal mark, increase 1 life per turn";
+                image.GetComponent<Image>().color = color;
+            }
+            if (grass == 2)
+            {
+                chainText.text = "chain effect: give enemy a burn mark, decrease 1 life per turn";
+                image.GetComponent<Image>().color = color;
+            }
+            if (grass == 3)
+            {
+                chainText.text = "chain effect: remove all marks on the field, decrease enemy 1 life per turn";
+                image.GetComponent<Image>().color = color;
+            }
+            if (fire == 2)
+            {
+                chainText.text = "chain effect: increase 1 damage";
+                image.GetComponent<Image>().color = color;
+            }
+            if (fire == 3)
+            {
+                chainText.text = "chain effect: increase 3 damage";
+                image.GetComponent<Image>().color = color;
+            }
+            if (fire <= 1 && water <= 1 && grass <= 1)
+            {
+                chainText.text = null;
+                image.GetComponent<Image>().color = Vector4.zero;
+            }
+
+        }
+
     }
 }

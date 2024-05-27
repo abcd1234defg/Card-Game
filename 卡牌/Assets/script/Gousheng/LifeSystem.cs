@@ -11,7 +11,7 @@ public class LifeSystem : MonoBehaviour
 
     private void Update()
     {
-        if (this.gameObject.tag == "Enemylife") { Ugui.text = "EnemyLife:" + " " + GM.enemylife.ToString(); }
-        else if (this.gameObject.tag == "Playerlife") { Ugui.text = "PlayerLife:" + " " + GM.playerlife.ToString(); }
+        if (this.gameObject.tag == "Enemylife") { Ugui.text = "Life:" + " " + GM.enemylife.ToString(); }
+        else if (this.gameObject.tag == "Playerlife") { Ugui.text = "Life:" + " " + GM.playerlife.ToString(); }
     }
 }

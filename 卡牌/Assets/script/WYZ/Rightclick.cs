@@ -24,36 +24,6 @@ public class Rightclick : MonoBehaviour,IPointerEnterHandler,IPointerDownHandler
             eneimg = info.transform.GetChild(1).gameObject;
             infotext = info.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         }
-
-        // Cardinf = weak.text.Split("\n");
-        
-        //if (CardInformation != null)
-        //{
-        //    // 将文本内容分割成行
-        //   string[] cardInfoLines = CardInformation.text.Split('\n');
-
-        //    // 解析每一行数据
-        //    foreach (string lines in cardInfoLines)
-        //    {
-        //        string[] parts = lines.Split(',');  // 使用冒号分割每行数据
-        //        {
-        //            string cardkind = parts[0].Trim();
-        //            string cardName = parts[1].Trim();
-        //            string cardDescription = parts[2].Trim();
-        //            string[] clearname = gameObject.name.Split('(');
-
-        //        if (cardName == clearname[0])
-        //        {
-        //            infotext.text = cardDescription; // Display matching card description
-        //            break; // Exit the loop after finding a match
-        //        }
-
-        //            // 假设你想在infotext上显示信息
-        //            infotext.text = $"{cardDescription}";
-        //        }
-        //    }
-        //}
-
     }
 
     // Update is called once per frame
@@ -66,6 +36,8 @@ public class Rightclick : MonoBehaviour,IPointerEnterHandler,IPointerDownHandler
     
     public void OnPointerEnter(PointerEventData eventData)
     {
+        //更改克制图片
+        //F 战士 G 法师 W 骑士
         if (tag == "fire")
         {
             my.GetComponent<Image>().sprite = F;
@@ -82,6 +54,7 @@ public class Rightclick : MonoBehaviour,IPointerEnterHandler,IPointerDownHandler
             my.GetComponent<Image>().sprite = W;
             eneimg.GetComponent<Image>().sprite = F;
         }
+        //更改描述文本
         if (CardInformation != null)
         {
             // 将文本内容分割成行
@@ -95,6 +68,7 @@ public class Rightclick : MonoBehaviour,IPointerEnterHandler,IPointerDownHandler
                     string cardkind = parts[0].Trim();
                     string cardName = parts[1].Trim();
                     string cardDescription = parts[2].Trim();
+                    //去掉名字中的clone
                     string[] clearname = gameObject.name.Split('(');
 
                     if (cardName == clearname[0])
@@ -115,6 +89,7 @@ public class Rightclick : MonoBehaviour,IPointerEnterHandler,IPointerDownHandler
     {
         if (eventData.button == PointerEventData.InputButton.Right)
         {
+            //移动到物体右上角
             Vector3 newPosition = transform.position;
             newPosition.x += 200;
             newPosition.y += 140;

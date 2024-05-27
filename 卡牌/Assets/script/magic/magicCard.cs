@@ -43,6 +43,7 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
         {
             if(draw)
             {
+                creater.GetComponent<createMagic>().draw = true;
                 isChoose = false;
                 GetComponent<Image>().color = color;
                 createMagic.LeftCardlist.Add(information);
@@ -109,7 +110,7 @@ public class magicCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
             if(isChoose == false)
             {
                 isChoose = true;
-                creater.GetComponent<createMagic>().draw = true;
+           
                 creater.GetComponent<createMagic>().existNum--;
                 creater.GetComponent<createMagic>().drawNum++;
                 GetComponent<Image>().color = new Vector4(1, 1, 1, 0.6f);

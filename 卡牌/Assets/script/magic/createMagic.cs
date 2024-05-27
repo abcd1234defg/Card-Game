@@ -9,6 +9,7 @@ public class createMagic : MonoBehaviour
     public GameObject Swap, tF, tW, tG, odd, even, doubleD;
     bool canCreate;
     public int createNum, maxNum, existNum, drawNum;
+    int existNum2;
     int choice;
     public bool draw;
     public TextAsset Database;
@@ -22,6 +23,7 @@ public class createMagic : MonoBehaviour
         canCreate = true;
         createNum = 2;
         maxNum = 4;
+        existNum2 = existNum;
     }
 
     // Update is called once per frame
@@ -39,7 +41,7 @@ public class createMagic : MonoBehaviour
         {
             if(draw == true)
             {
-                createNum = drawNum;
+               // createNum = drawNum;
                 create();
                 draw = false;
             }
@@ -55,13 +57,14 @@ public class createMagic : MonoBehaviour
                 createNum = maxNum - existNum;
 
             canCreate = true;
+            existNum2 = existNum;
         }
         
     }
 
     void create()
     {
-        while(transform.childCount < createNum)
+        while(transform.childCount < existNum2 + createNum)
         {
             int randomIndex = Random.Range(0, LeftCardlist.Count);
             string selectedCard = LeftCardlist[randomIndex];
@@ -76,7 +79,7 @@ public class createMagic : MonoBehaviour
             GameObject prefab = Resources.Load<GameObject>(cardName);
             if (prefab == null)
             {
-                Debug.Log($"无效的m卡牌信息:" + selectedCard);
+                Debug.Log($"无效的m卡牌信息2:" + selectedCard);
                 LeftCardlist.RemoveAt(randomIndex);
                 continue;
             }

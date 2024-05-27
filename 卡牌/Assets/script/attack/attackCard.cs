@@ -115,66 +115,65 @@ public class attackCard : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     {
         if (gamemanager.state == gamemanager.gamestate.beforeStart)//弃牌阶段
         {
-                if (choose == false)
+            if (choose == false)
+            {
+                if (gamemanager.drawCard < 3)
                 {
-                    if (gamemanager.drawCard < 3)
-                    {
-                        createCard.createNumber++;
-                        isDraw = true;
-                        print("color change");
-                        color.a = 0.5f;
-                        GetComponent<Image>().color = color;
-                        gamemanager.drawCard++;
-                        choose = true;
-                    }
+                    createCard.createNumber++;
+                    isDraw = true;
+                    print("color change");
+                    color.a = 0.5f;
+                    GetComponent<Image>().color = color;
+                    gamemanager.drawCard++;
+                    choose = true;
                 }
-                else if (choose == true)
+            }
+            else if (choose == true)
+            {
+                if (gamemanager.drawCard > 0)
                 {
-                    if (gamemanager.drawCard > 0)
-                    {
-                        createCard.createNumber--;
-                        color.a = 1f;
-                        GetComponent<Image>().color = color;
-                        gamemanager.drawCard--;
-                        isDraw = false;
-                        choose = false;
-                    }
+                    createCard.createNumber--;
+                    color.a = 1f;
+                    GetComponent<Image>().color = color;
+                    gamemanager.drawCard--;
+                    isDraw = false;
+                    choose = false;
                 }
-            
+            }
         }
 
         if (gamemanager.state == gamemanager.gamestate.start)//出牌阶段
         {
-                if (isChoose == false)//出牌
+            if (isChoose == false)//出牌
+            {
+                if(gamemanager.canStart == false)
                 {
-                    if (gamemanager.canStart == false)
+                    createCard.createNumber++;
+                    playerChoice();
+                    if (this.gameObject.tag == "fire")
                     {
-                        createCard.createNumber++;
-                        playerChoice();
-                        if (this.gameObject.tag == "fire")
-                        {
-
+                       
                             gamemanager.fire++;
-                        }
+                    }
 
-                        if (gameObject.tag == "water")
-                        {
-
+                    if (gameObject.tag == "water")
+                    {
+                        
                             gamemanager.water++;
 
+                        
+                    }
 
-                        }
-
-                        if (gameObject.tag == "grass")
-                        {
-
+                    if (gameObject.tag == "grass")
+                    {
+                       
                             gamemanager.grass++;
 
-
-                        }
-                        isChoose = true;
+                        
                     }
+                    isChoose = true;
                 }
+            }
             else if (isChoose == true)//再次点击该牌取消出牌
             {
                 createCard.createNumber--;

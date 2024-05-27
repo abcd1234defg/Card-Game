@@ -1358,9 +1358,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GM: {fileID: 0}
   thisSlot: {fileID: 429586187}
-  enemySlot: {fileID: 576469289}
-  otherEnemySlots1: {fileID: 794352288}
-  otherEnemySlots2: {fileID: 168226181}
+  enemySlot: {fileID: 1210091598}
+  otherEnemySlots1: {fileID: 1993093777}
+  otherEnemySlots2: {fileID: 1210412657}
   friendSlots1: {fileID: 1614424009}
   friendSlots2: {fileID: 721365704}
   ATK: 0
@@ -2582,9 +2582,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GM: {fileID: 0}
   thisSlot: {fileID: 721365704}
-  enemySlot: {fileID: 168226181}
-  otherEnemySlots1: {fileID: 794352288}
-  otherEnemySlots2: {fileID: 576469289}
+  enemySlot: {fileID: 1210412657}
+  otherEnemySlots1: {fileID: 1993093777}
+  otherEnemySlots2: {fileID: 1210091598}
   friendSlots1: {fileID: 1614424009}
   friendSlots2: {fileID: 429586187}
   ATK: 0
@@ -5730,9 +5730,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GM: {fileID: 0}
   thisSlot: {fileID: 1614424009}
-  enemySlot: {fileID: 794352288}
-  otherEnemySlots1: {fileID: 168226181}
-  otherEnemySlots2: {fileID: 576469289}
+  enemySlot: {fileID: 1993093777}
+  otherEnemySlots1: {fileID: 1210412657}
+  otherEnemySlots2: {fileID: 1210091598}
   friendSlots1: {fileID: 721365704}
   friendSlots2: {fileID: 429586187}
   ATK: 0

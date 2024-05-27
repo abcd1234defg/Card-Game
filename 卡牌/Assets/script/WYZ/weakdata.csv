@@ -1,0 +1,12 @@
+Fighter,Slash,1 Damage
+Fighter,DoubleAttack,If you win this card make damage twice at end.
+Fighter,Rush,3 Damage
+Fighter,DragonSlash,All of your cards' attack point + 1.
+Witcher,SlashF,1 Damage
+Witcher,Shield,"The enemy card that face this card, attack point become 0."
+Witcher,WitchBolt,Enemy's life - 2.
+Witcher,FireBall,Give your enemy up to 1 burn marks.
+Paladin,SlashH,1 Damage
+Paladin,ShieldAttack,"The enemy card that face this card, attack point -1."
+Paladin,LayOnHand,Your life point +2.
+Paladin,DivineStrike, All of your enemy's cards' attack point - 1.

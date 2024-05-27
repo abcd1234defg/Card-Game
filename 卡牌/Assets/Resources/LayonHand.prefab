@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 3926143071910261353}
   - component: {fileID: 6816330974807980653}
   - component: {fileID: 3228350603562685562}
+  - component: {fileID: 8300436481027068201}
   m_Layer: 5
   m_Name: LayonHand
   m_TagString: water
@@ -453,3 +454,24 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_SortAtRoot: 0
+--- !u!114 &8300436481027068201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9138937071460375684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc287e497044ab1428bd3baa20a99b8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardInformation: {fileID: 4900000, guid: e0b578ab594ce7746a103650ff0e4387, type: 3}
+  info: {fileID: 0}
+  my: {fileID: 0}
+  eneimg: {fileID: 0}
+  infotext: {fileID: 0}
+  F: {fileID: 21300000, guid: 0628e9a962dd61548afda021875c73e5, type: 3}
+  G: {fileID: 21300000, guid: bf17c6c896405fa4c98fd5972b044de6, type: 3}
+  W: {fileID: 21300000, guid: 28c843819eef1644ca90c6f4838801d9, type: 3}

@@ -197,12 +197,14 @@ public class gamemanager : MonoBehaviour
             {
                 canOver = true;
                 over = "you lose";
+                GameEnd = "PlayerLose";
                 state = gamestate.gameover;
             }
             if (enemylife <= 0)
             {
                 canOver = true;
                 over = "you win";
+                GameEnd = "PlayerWin";
                 state = gamestate.gameover;
             }
         }

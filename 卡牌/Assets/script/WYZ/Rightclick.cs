@@ -65,7 +65,6 @@ public class Rightclick : MonoBehaviour,IPointerEnterHandler,IPointerDownHandler
             {
                 string[] parts = lines.Split(',');  // 使用冒号分割每行数据
                 {
-                    string cardkind = parts[0].Trim();
                     string cardName = parts[1].Trim();
                     string cardDescription = parts[2].Trim();
                     //去掉名字中的clone

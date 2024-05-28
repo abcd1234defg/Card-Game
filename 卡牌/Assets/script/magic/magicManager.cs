@@ -17,6 +17,7 @@ public class magicManager : MonoBehaviour
     public gamemanager gamemanager;
     public GameObject thisCard;
     public number number1;
+    public GameObject anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -234,8 +235,10 @@ public class magicManager : MonoBehaviour
         if(gamemanager.state3 == gamemanager.gamestate3.magicEnd)
         {
             gamemanager.beiLv = 2;
+            
             if (canGoOn == true)
             {
+                anim.GetComponent<animation>().canC = true;
                 gamemanager.state3 = gamemanager.gamestate3.none;
                 canGoOn = false;
                 canDouble = false;

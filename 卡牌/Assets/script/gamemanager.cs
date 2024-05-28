@@ -83,7 +83,11 @@ public class gamemanager : MonoBehaviour
                 canStart = false;
             canDamage = true;
             chainT();
-            
+            c1 = false;
+            if (c2)
+            {
+                tutorial.SetActive(true);
+            }
         }
         if(state3 == gamestate3.magicEnd)
         {

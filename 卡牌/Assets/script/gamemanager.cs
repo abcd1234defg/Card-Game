@@ -58,6 +58,7 @@ public class gamemanager : MonoBehaviour
         Application.targetFrameRate = 60;
         image = GameObject.Find("Image");
         color = image.GetComponent<Image>().color;
+        tutorial = GameObject.Find("tutorial");
     }
 
     // Update is called once per frame

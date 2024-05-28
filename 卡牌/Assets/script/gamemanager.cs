@@ -38,6 +38,8 @@ public class gamemanager : MonoBehaviour
     GameObject image;
     Color color;
     public int doubleattack = 0;
+    public bool c1 = true, c2 = true, c3 = true;
+    GameObject tutorial;
     // Start is called before the first frame update
     void Start()
     {

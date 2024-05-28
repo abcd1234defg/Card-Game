@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class EndSC : MonoBehaviour
 {
-    public gamemanager GM;
     // Start is called before the first frame update
     void Start()
     {

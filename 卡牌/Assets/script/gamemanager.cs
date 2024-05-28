@@ -70,6 +70,7 @@ public class gamemanager : MonoBehaviour
     
         if(state == gamestate.beforeStart)
         {
+            text.text = "Discard Phase";
             beiLv = 1;
             image.GetComponent<Image>().color = Vector4.zero;
             e1.text = null;
@@ -82,6 +83,7 @@ public class gamemanager : MonoBehaviour
         }
         if (state == gamestate.start)
         {
+            text.text = "Play Phase";
             if ((fire + water + grass == 3) && magicNum == 0)//玩家把三张牌选满
             {
                 canStart = true;
@@ -102,7 +104,8 @@ public class gamemanager : MonoBehaviour
         }
         if(state == gamestate.playing)
         {
- 
+            text.text = "Enemy Phase";
+
             chainText.text = null;
             image.GetComponent<Image>().color = Vector4.zero;
             e1.text = number1.ToString();
@@ -113,6 +116,10 @@ public class gamemanager : MonoBehaviour
                 tutorial.SetActive(true);
             }
         }
+        if(state == gamestate.singlePhase)
+        {
+            text.text = "Battle";
+        }
         if (state == gamestate.chain1||state== gamestate.chain2) 
         {
             pDamage();
@@ -120,7 +127,7 @@ public class gamemanager : MonoBehaviour
         }
         if(state == gamestate.end)
         {
-
+            text.text = "Battle End";
             if (win > lose)
             {
                 state2 = gamestate2.win;
@@ -190,7 +197,7 @@ public class gamemanager : MonoBehaviour
             canDamage = false;
             doubleattack = 0;
         }
-        text.text = state.ToString();
+        //text.text = state.ToString();
         //////////////////////////////////////////////////////////////////////////////////////
         if(state != gamestate.gameover)
         {

@@ -39,6 +39,7 @@ public class gamemanager : MonoBehaviour
     Color color;
     public bool c1 = true, c2 = true, c3 = true;
     GameObject tutorial;
+    public string GameEnd;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +59,7 @@ public class gamemanager : MonoBehaviour
         image = GameObject.Find("Image");
         color = image.GetComponent<Image>().color;
         tutorial = GameObject.Find("tutorial");
+        GameEnd = "hold";
     }
 
     // Update is called once per frame
@@ -194,12 +196,14 @@ public class gamemanager : MonoBehaviour
             {
                 canOver = true;
                 over = "you lose";
+                GameEnd = "PlayerLose";
                 state = gamestate.gameover;
             }
             if (enemylife <= 0)
             {
                 canOver = true;
                 over = "you win";
+                GameEnd = "PlayerWin";
                 state = gamestate.gameover;
             }
         }

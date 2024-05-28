@@ -53,7 +53,7 @@ public class gamemanager : MonoBehaviour
         enemy3 = GameObject.Find("enemy3");
         Application.targetFrameRate = 60;
         state = gamestate.beforeStart;
-        enemylife = 20; playerlife = 10;
+        enemylife = 30; playerlife = 10;
         canDamage = true;
         state3 = gamestate3.none;
         magicManager = GetComponent<magicManager>();

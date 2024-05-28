@@ -4,6 +4,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class gamemanager : MonoBehaviour
 {
@@ -211,6 +212,16 @@ public class gamemanager : MonoBehaviour
         if(state == gamestate.gameover)
         {
             winOrLose.text = over;
+            if (GameEnd == "PlayerLose")
+            {
+                SceneManager.LoadScene("Lose");
+
+            }
+            if (GameEnd == "PlayerWin")
+            {
+                SceneManager.LoadScene("Win");
+
+            }
         }
     }
     public void enemy()//骰三个十二面骰

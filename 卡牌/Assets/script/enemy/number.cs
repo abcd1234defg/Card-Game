@@ -17,6 +17,8 @@ public class number : MonoBehaviour
     bool canPlus = true;
     public Sprite Goblin, NTR, Slime;
     public SpriteRenderer Icon;
+    public GameObject mAnim;
+    GameObject theA;
     // Start is called before the first frame update
     void Start()
     {
@@ -85,9 +87,28 @@ public class number : MonoBehaviour
                 }
             }
         }
-        if(gamemanager.state3 == gamemanager.gamestate3.magicEnd)
+        
+        if (gamemanager.state3 == gamemanager.gamestate3.magicEnd)
         {
             canPlus = true;
+            if(magicManager.num1 == gameObject || magicManager.num2 == gameObject)
+            {
+                theA = Instantiate(mAnim, transform.position, Quaternion.identity);
+            }
+            else if(magicManager.canOdd == true || magicManager.canEven == true)
+            {
+                theA = Instantiate(mAnim, transform.position, Quaternion.identity);
+            }
+            
+        }
+        if(theA != null)
+        {
+            int cd = 0;
+            cd++;
+            if(cd == 40)
+            {
+                Destroy(theA);
+            }
         }
     }
     private void OnMouseDown()

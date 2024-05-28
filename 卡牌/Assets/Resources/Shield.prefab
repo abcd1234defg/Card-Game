@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6764960183626666593}
   - component: {fileID: 5690354203972212366}
   - component: {fileID: -6735641078827182429}
-  - component: {fileID: -2626786669108250076}
+  - component: {fileID: 1053380787988935919}
   m_Layer: 5
   m_Name: Shield
   m_TagString: grass
@@ -185,7 +185,7 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
---- !u!114 &-2626786669108250076
+--- !u!114 &1053380787988935919
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

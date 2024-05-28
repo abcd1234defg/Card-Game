@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5659485344664196580}
   - component: {fileID: 3904488011178743358}
   - component: {fileID: 69520165606756589}
-  - component: {fileID: 32048149440063307}
+  - component: {fileID: 7440844664593172161}
   m_Layer: 5
   m_Name: SlashF
   m_TagString: grass
@@ -185,7 +185,7 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
---- !u!114 &32048149440063307
+--- !u!114 &7440844664593172161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 4012173962184785122}
   - component: {fileID: 3806503834135076718}
   - component: {fileID: 633494995665774668}
-  - component: {fileID: -4063848322240522856}
+  - component: {fileID: 6324588967633956612}
   m_Layer: 5
   m_Name: Rush
   m_TagString: fire
@@ -455,7 +455,7 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
---- !u!114 &-4063848322240522856
+--- !u!114 &6324588967633956612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7059205513509560433}
   - component: {fileID: 4618984781884908544}
   - component: {fileID: -5033765534523221156}
-  - component: {fileID: 9205434558917537388}
+  - component: {fileID: -5390004847210402666}
   m_Layer: 5
   m_Name: ShieldAttack
   m_TagString: water
@@ -185,7 +185,7 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
---- !u!114 &9205434558917537388
+--- !u!114 &-5390004847210402666
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

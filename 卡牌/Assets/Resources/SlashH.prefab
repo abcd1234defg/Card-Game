@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 1705671528943963511}
   - component: {fileID: 550966106237648846}
   - component: {fileID: -6325324808316532837}
-  - component: {fileID: -3898864263105846133}
+  - component: {fileID: -1276452175246963751}
   m_Layer: 5
   m_Name: SlashH
   m_TagString: water
@@ -320,7 +320,7 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
---- !u!114 &-3898864263105846133
+--- !u!114 &-1276452175246963751
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

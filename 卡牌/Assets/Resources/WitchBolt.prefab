@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6351501197107106700}
   - component: {fileID: 5201874442378747096}
   - component: {fileID: 7482973094495612864}
-  - component: {fileID: -3366033048081942461}
+  - component: {fileID: 6514641523626783688}
   m_Layer: 5
   m_Name: WitchBolt
   m_TagString: grass
@@ -185,7 +185,7 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
---- !u!114 &-3366033048081942461
+--- !u!114 &6514641523626783688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

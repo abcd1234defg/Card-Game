@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 53679229973937269}
   - component: {fileID: 4204536246130156178}
   - component: {fileID: -1509179049599221997}
-  - component: {fileID: -358360773392222761}
+  - component: {fileID: 4529400077759244802}
   m_Layer: 5
   m_Name: Slash
   m_TagString: fire
@@ -173,7 +173,7 @@ RectTransform:
   - {fileID: 192299644409411424}
   - {fileID: 1260040087337991065}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -320,7 +320,7 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
---- !u!114 &-358360773392222761
+--- !u!114 &4529400077759244802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

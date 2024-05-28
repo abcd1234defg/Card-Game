@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 3220489119055409233}
   - component: {fileID: 1341174872206628334}
   - component: {fileID: 7084548235489864947}
-  - component: {fileID: -771078247841391126}
+  - component: {fileID: 2915193846179786513}
   m_Layer: 5
   m_Name: FireBall
   m_TagString: grass
@@ -455,7 +455,7 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
---- !u!114 &-771078247841391126
+--- !u!114 &2915193846179786513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

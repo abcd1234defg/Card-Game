@@ -41,7 +41,7 @@ public class createMagic : MonoBehaviour
         {
             if(draw == true)
             {
-               // createNum = drawNum;
+                createNum = drawNum;
                 create();
                 draw = false;
             }
@@ -64,7 +64,8 @@ public class createMagic : MonoBehaviour
 
     void create()
     {
-        while(transform.childCount < existNum2 + createNum)
+        //while(transform.childCount < existNum2 + createNum)
+        for(int i = 0; i < createNum; i++)
         {
             int randomIndex = Random.Range(0, LeftCardlist.Count);
             string selectedCard = LeftCardlist[randomIndex];

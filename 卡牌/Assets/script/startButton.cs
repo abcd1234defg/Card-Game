@@ -97,7 +97,7 @@ public class startButton : MonoBehaviour
         }
         else if(gamemanager.state == gamemanager.gamestate.gameover)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("Tianyitest 1");
         }
     }
 

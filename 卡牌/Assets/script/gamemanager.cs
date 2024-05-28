@@ -37,6 +37,7 @@ public class gamemanager : MonoBehaviour
     public TextMeshProUGUI chainText;
     GameObject image;
     Color color;
+    public int doubleattack = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -96,10 +97,14 @@ public class gamemanager : MonoBehaviour
             e2.text = number2.ToString();
             e3.text = number3.ToString();
         }
-        if(state == gamestate.end)
+        if (state == gamestate.chain1||state== gamestate.chain2) 
         {
             pDamage();
             eDamage();
+        }
+        if(state == gamestate.end)
+        {
+
             if (win > lose)
             {
                 state2 = gamestate2.win;
@@ -132,7 +137,7 @@ public class gamemanager : MonoBehaviour
             {
                 if (state2 == gamestate2.win)
                 {
-                    enemylife -= (playerDamage * beiLv);
+                    enemylife -= ((playerDamage+doubleattack) * beiLv);
                     canDamage = false;
                     print("asdad");
                 }
@@ -167,6 +172,7 @@ public class gamemanager : MonoBehaviour
             lose = 0;
             canStart = false;
             canDamage = false;
+            doubleattack = 0;
         }
         text.text = state.ToString();
         //////////////////////////////////////////////////////////////////////////////////////

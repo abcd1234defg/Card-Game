@@ -44,11 +44,11 @@ public class Single : MonoBehaviour
                 SingleButtom = false;
             }
         }
-        if (GM.GetComponent<gamemanager>().state == gamemanager.gamestate.end&& GM.GetComponent<gamemanager>().state2 == gamemanager.gamestate2.win) 
+        if (GM.GetComponent<gamemanager>().state == gamemanager.gamestate.chain1|| GM.GetComponent<gamemanager>().state == gamemanager.gamestate.chain2) 
         { 
-            if (single== "DoubleAttack" && RushButtom == true) 
+            if (single== "DoubleAttack(Clone)" && RushButtom == true) 
             {
-                GM.GetComponent<gamemanager>().playerDamage += ATK;
+                GM.GetComponent<gamemanager>().doubleattack += ATK;
                 RushButtom = false;
             }
         }

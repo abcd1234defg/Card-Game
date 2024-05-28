@@ -3074,7 +3074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc287e497044ab1428bd3baa20a99b8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardInformation: {fileID: 4900000, guid: e0b578ab594ce7746a103650ff0e4387, type: 3}
+  CardInformation: {fileID: 4900000, guid: 476270c7875772e47b79e18aeffb25d6, type: 3}
   info: {fileID: 0}
   my: {fileID: 0}
   eneimg: {fileID: 0}

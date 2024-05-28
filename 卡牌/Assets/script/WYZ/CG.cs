@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CG : MonoBehaviour
 {
-    public GameObject dao,BKG;
+    public GameObject dao,BKG,board;
     // Start is called before the first frame update
     void Start()
     {
-        
+        board.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,5 +26,6 @@ public class CG : MonoBehaviour
     {
         dao.SetActive(false);
         BKG.SetActive(false);
+        board.SetActive(true);
     }
 }

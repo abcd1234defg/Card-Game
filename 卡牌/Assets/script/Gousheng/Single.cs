@@ -9,7 +9,7 @@ public class Single : MonoBehaviour
     public int ATK;
     public string single;
     public player PL;
-    bool SingleButtom=true;
+    bool SingleButtom=true,RushButtom=true;
     public TextMeshProUGUI TextAtk;
     
     // Start is called before the first frame update
@@ -44,7 +44,15 @@ public class Single : MonoBehaviour
                 SingleButtom = false;
             }
         }
-        if (GM.GetComponent<gamemanager>().state == gamemanager.gamestate.end) { SingleButtom = true; }
+        if (GM.GetComponent<gamemanager>().state == gamemanager.gamestate.chain1|| GM.GetComponent<gamemanager>().state == gamemanager.gamestate.chain2) 
+        { 
+            if (single== "DoubleAttack(Clone)" && RushButtom == true) 
+            {
+                GM.GetComponent<gamemanager>().doubleattack += ATK;
+                RushButtom = false;
+            }
+        }
+        if (GM.GetComponent<gamemanager>().state == gamemanager.gamestate.end) { SingleButtom = true;RushButtom = true; }
     }
     void Effect()
     {

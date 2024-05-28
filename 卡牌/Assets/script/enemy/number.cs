@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class number : MonoBehaviour
 {
@@ -15,6 +15,8 @@ public class number : MonoBehaviour
     public magicManager magicManager;
     public GameObject shadow, theShadow;
     bool canPlus = true;
+    public Sprite Goblin, NTR, Slime;
+    public SpriteRenderer Icon;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,16 +47,18 @@ public class number : MonoBehaviour
     {
         if(theColor == blockColor.water)
         {
-            GetComponent<SpriteRenderer>().color = Color.blue;
-           
+            //GetComponent<SpriteRenderer>().color = Color.blue;
+            Icon.sprite = Slime;
         }
         if (theColor == blockColor.fire)
         {
-            GetComponent<SpriteRenderer>().color = Color.red;
+            //GetComponent<SpriteRenderer>().color = Color.red;
+            Icon.sprite = NTR;
         }
         if (theColor == blockColor.grass)
         {
-            GetComponent<SpriteRenderer>().color = Color.green;
+            //GetComponent<SpriteRenderer>().color = Color.green;
+            Icon.sprite = Goblin;
         }
         if(gamemanager.state3 == gamemanager.gamestate3.none)
         {

@@ -38,6 +38,7 @@ public class gamemanager : MonoBehaviour
     public TextMeshProUGUI chainText;
     GameObject image;
     Color color;
+    public int doubleattack = 0;
     public bool c1 = true, c2 = true, c3 = true;
     GameObject tutorial;
     public string GameEnd;
@@ -74,7 +75,7 @@ public class gamemanager : MonoBehaviour
             e1.text = null;
             e2.text = null;
             e3.text = null;
-            if(c1)
+            if (c1)
             {
                 tutorial.SetActive(true);
             }
@@ -104,24 +105,23 @@ public class gamemanager : MonoBehaviour
  
             chainText.text = null;
             image.GetComponent<Image>().color = Vector4.zero;
-            pDamage();
-            eDamage();
             e1.text = number1.ToString();
             e2.text = number2.ToString();
             e3.text = number3.ToString();
-            c2 = false;
             if (c3)
             {
                 tutorial.SetActive(true);
             }
         }
-        if(state == gamestate.singlePhase)
+        if (state == gamestate.chain1||state== gamestate.chain2) 
         {
-            c3 = false;
+            pDamage();
+            eDamage();
         }
         if(state == gamestate.end)
         {
-          if(win > lose)
+
+            if (win > lose)
             {
                 state2 = gamestate2.win;
                 
@@ -153,7 +153,7 @@ public class gamemanager : MonoBehaviour
             {
                 if (state2 == gamestate2.win)
                 {
-                    enemylife -= (playerDamage * beiLv);
+                    enemylife -= ((playerDamage+doubleattack) * beiLv);
                     canDamage = false;
                     print("asdad");
                 }
@@ -188,6 +188,7 @@ public class gamemanager : MonoBehaviour
             lose = 0;
             canStart = false;
             canDamage = false;
+            doubleattack = 0;
         }
         text.text = state.ToString();
         //////////////////////////////////////////////////////////////////////////////////////
@@ -213,7 +214,7 @@ public class gamemanager : MonoBehaviour
             winOrLose.text = over;
             if (GameEnd == "PlayerLose")
             {
-               SceneManager.LoadScene("Lose");
+                SceneManager.LoadScene("Lose");
 
             }
             if (GameEnd == "PlayerWin")

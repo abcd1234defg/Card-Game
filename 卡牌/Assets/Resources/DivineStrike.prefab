@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4881542177761412007}
   - component: {fileID: 3877235076229750732}
   - component: {fileID: 1916157644406577986}
-  - component: {fileID: -7694859657409355205}
+  - component: {fileID: 7993397361242566570}
   m_Layer: 5
   m_Name: DivineStrike
   m_TagString: water
@@ -184,8 +184,7 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_SortAtRoot: 0
---- !u!114 &-7694859657409355205
+--- !u!114 &7993397361242566570
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc287e497044ab1428bd3baa20a99b8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardInformation: {fileID: 4900000, guid: e0b578ab594ce7746a103650ff0e4387, type: 3}
+  CardInformation: {fileID: 4900000, guid: 476270c7875772e47b79e18aeffb25d6, type: 3}
   info: {fileID: 0}
   my: {fileID: 0}
   eneimg: {fileID: 0}

@@ -265,31 +265,31 @@ public class gamemanager : MonoBehaviour
             image.GetComponent<Image>().color = color;
             if(magicManager.canSwap)
             {
-                chainText.text = "transform.position: swap two enemy's position";
+                chainText.text = "Exchange: Swap two enemy's attack tendency.";
             }
             if(magicManager.canTransF)
             {
-                chainText.text = "polymorph.minotaur: turn an enemy into minotaur";
+                chainText.text = "Let't NTR: Turn an enemy's attack tendency into minotaur.";
             }
             if (magicManager.canTransW)
             {
-                chainText.text = "polymorph.slime: turn an enemy into slime";
+                chainText.text = "Slime Time: Turn an enemy's attack tendency into slime.";
             }
             if (magicManager.canTransG)
             {
-                chainText.text = "polymorph.goblin: turn an enemy into goblin";
+                chainText.text = "Goblin Party: Turn an enemy's attack tendency into goblin.";
             }
             if (magicManager.canOdd)
             {
-                chainText.text = "odd dice: your enemy can only roll out odd number";
+                chainText.text = "Odd!!: Enemy can only roll out odd number during this turn.";
             }
             if (magicManager.canEven)
             {
-                chainText.text = "even dice: your enemy can only roll out even number";
+                chainText.text = "Even!!: Enemy can only roll out even number during this turn.";
             }
             if (magicManager.canDouble)
             {
-                chainText.text = "strange potion: double your damage and enemy's damage this turn";
+                chainText.text = "True Hero Potion: During this turn, the damage X2.";
             }
 
         }
@@ -297,32 +297,32 @@ public class gamemanager : MonoBehaviour
         {
             if (water == 2)
             {
-                chainText.text = "chain effect: give you 2 shield mark, decrease enemy 1 damage per mark";
+                chainText.text = "Chain Effect: Give yourself up to 2 defend marks, each marks can decrease enemy 1 damage per turn.";
                 image.GetComponent<Image>().color = color;
             }
             if (water == 3)
             {
-                chainText.text = "chain effect: give you a heal mark, increase 1 life per turn";
+                chainText.text = "Chain Effect: Give yourself up to 1 heal mark, each marks healing 1 life per turn";
                 image.GetComponent<Image>().color = color;
             }
             if (grass == 2)
             {
-                chainText.text = "chain effect: give enemy a burn mark, decrease 1 life per turn";
+                chainText.text = "Chain Effect: Give enemy up to 1 burn mark, each marks will make 1 damage per turn";
                 image.GetComponent<Image>().color = color;
             }
             if (grass == 3)
             {
-                chainText.text = "chain effect: remove all marks on the field, decrease enemy 1 life per mark";
+                chainText.text = "Chain Effect: Clean all the marks from the borad, each marks you clean can give your enemy 1 damage.";
                 image.GetComponent<Image>().color = color;
             }
             if (fire == 2)
             {
-                chainText.text = "chain effect: increase 1 damage";
+                chainText.text = "Chain Effect: If you win, the total damage +1 until end of this turn.";
                 image.GetComponent<Image>().color = color;
             }
             if (fire == 3)
             {
-                chainText.text = "chain effect: increase 3 damage";
+                chainText.text = "Chain Effect: If you win, the total damage +3 until end of this turn.";
                 image.GetComponent<Image>().color = color;
             }
             if (fire <= 1 && water <= 1 && grass <= 1)

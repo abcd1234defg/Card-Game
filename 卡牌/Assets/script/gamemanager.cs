@@ -40,6 +40,7 @@ public class gamemanager : MonoBehaviour
     public int doubleattack = 0;
     public bool c1 = true, c2 = true, c3 = true;
     GameObject tutorial;
+    public string GameEnd;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +60,7 @@ public class gamemanager : MonoBehaviour
         image = GameObject.Find("Image");
         color = image.GetComponent<Image>().color;
         tutorial = GameObject.Find("tutorial");
+        GameEnd = "hold";
     }
 
     // Update is called once per frame
@@ -72,6 +74,10 @@ public class gamemanager : MonoBehaviour
             e1.text = null;
             e2.text = null;
             e3.text = null;
+            if (c1)
+            {
+                tutorial.SetActive(true);
+            }
         }
         if (state == gamestate.start)
         {
@@ -98,12 +104,10 @@ public class gamemanager : MonoBehaviour
  
             chainText.text = null;
             image.GetComponent<Image>().color = Vector4.zero;
-            
-
             e1.text = number1.ToString();
             e2.text = number2.ToString();
             e3.text = number3.ToString();
-            if (c1)
+            if (c3)
             {
                 tutorial.SetActive(true);
             }

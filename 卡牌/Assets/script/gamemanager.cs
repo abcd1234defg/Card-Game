@@ -99,6 +99,10 @@ public class gamemanager : MonoBehaviour
             e1.text = number1.ToString();
             e2.text = number2.ToString();
             e3.text = number3.ToString();
+            if (c1)
+            {
+                tutorial.SetActive(true);
+            }
         }
         if (state == gamestate.chain1||state== gamestate.chain2) 
         {

@@ -22,9 +22,7 @@ public class tutorial : MonoBehaviour
             if(gamemanager.c1)
             {
                 gameObject.SetActive(true);
-                text.text = "Now it's the discard phase. You can discard up to three attack cards (cards on the left) and " +
-                "all magic cards in your hand (cards on the right). The discarded cards will be replenished afterward." +
-                " Click the 'next' button to proceed to the next phase.";
+                text.text = "This phase is the preparation phase. During this phase, you can choose to discard and redraw up to three cards, or you can choose to reset your magic cards. Click NEXT to proceed to the next phase of the game.";
             }
             
         }
@@ -35,9 +33,7 @@ public class tutorial : MonoBehaviour
             if(gamemanager.c2)
             {
                 gameObject.SetActive(true);
-                text.text = "It is now the play phase. You need to play exactly three attack cards and any number of magic cards. You can right-click" +
-               " on an attack card to view its information. Different quantities of the same type of attack card will give you different chain effects." +
-               " Click the 'next' button to proceed to the next phase.";
+                text.text = "This phase is the main phase. During this phase, you must choose three cards from your hand to play, right-click on a card to check these effects and counter relationships. You can also choose to use the magic cards on the right side. When you select two or more cards of the same type, different chain effects will be triggered. Click NEXT to proceed to the next phase of the game.";
             }
            
 
@@ -48,9 +44,7 @@ public class tutorial : MonoBehaviour
             if(gamemanager.c3)
             {
                 gameObject.SetActive(true);
-                text.text = "Now, let's explain the settlement rules: Based on the outcome of each of the three sets of cards from both sides, the side that wins" +
-               " more sets is the winner. The winner will deal damage to the loser equal to the sum of the values of the three cards." +
-               " Click the 'next' button to proceed to the next phase.";
+                text.text = "This phase will enter the battle phase. During this phase, the victory or defeat between each pair of opposing cards will be determined. The side with more advantageous counter relationships will win. After winning, each card's attack power will be used to deal damage to the opponent. Don't worry, you can still resolve your chain effects. Click NEXT to enter the battle.";
             }
            
         }

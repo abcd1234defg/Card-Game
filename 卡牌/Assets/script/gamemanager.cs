@@ -90,15 +90,17 @@ public class gamemanager : MonoBehaviour
  
             chainText.text = null;
             image.GetComponent<Image>().color = Vector4.zero;
-            pDamage();
-            eDamage();
+            
+
             e1.text = number1.ToString();
             e2.text = number2.ToString();
             e3.text = number3.ToString();
         }
         if(state == gamestate.end)
         {
-          if(win > lose)
+            pDamage();
+            eDamage();
+            if (win > lose)
             {
                 state2 = gamestate2.win;
                 
